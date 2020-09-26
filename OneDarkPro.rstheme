@@ -1,0 +1,1636 @@
+/* rs-theme-name: One Dark Pro */
+/* rs-theme-is-dark: TRUE */
+/* THIS THEME WAS APADTED FROM https://github.com/patrickshox/Mojave-Dark-RStudio-Theme */
+
+:root {
+  --border-color: #282c34;
+  --background-color: #21252b;
+  --text-color: #abb2c0;
+  --text-color-selected: #dcdcdc;
+  --text-color-deselected: #7e8083;
+  --comment-style: italic;   /* change to 'normal' (without quotes) if don't want italic comments */
+}
+
+
+/* ------------------------------------
+      UI STUFF (Outside editor)
+ ------------------------------------ */
+
+.ace_snippet-marker {
+    background: rgb(21,126,251);
+    color: white;
+    border: none !important;
+    border-top: 1px solid rgb(110, 111, 130);
+    border-bottom: 1px solid rgb(110, 111, 130);
+    border-radius: 3px;
+}
+
+.GD15MCFCEUB .ace_keyword {
+    color: rgb(217,217,217) !important;
+}
+
+/* editor margin */
+.ace_print-margin {
+  background-color: rgb(76,77,86) !important;
+}
+
+.gwt-DecoratedPopupPanel.popupPanel {
+  background-color: #202121;
+  border-color: #444444;
+}
+
+
+/* Markup viewer */
+iframe.gwt-Frame.ace_editor_theme:not([src="about:blank"]) {
+  filter: invert(100%)
+}
+
+/* Markup viewer on hover */
+iframe.gwt-Frame.ace_editor_theme:hover {
+  filter: invert(0%)
+}
+
+.GD15MCFCGPD {
+  box-shadow: inset 0 0 4px 0px black;
+  background-color: #5f5f5f;
+  border: 1px solid #5f5f5f;
+}
+
+/*Plots viewer*/
+iframe#rstudio_plot_image_frame {
+  mix-blend-mode: multiply;
+}
+/* Plots viewer on hover*/
+div.ace_editor_theme:hover iframe#rstudio_plot_image_frame {
+  mix-blend-mode: normal;
+}
+
+.GD15MCFCPFD {
+  border: none;
+  background-color: inherit;
+}
+
+/*Dropdown menus for the buttons on the home page ie not selects in settings*/
+.gwt-DecoratedPopupPanel.themedPopupPanel .popupMiddleCenter {
+  background-color: rgb(59,59,59) !important;
+  border-radius: 0px 0px 7px 7px !important;
+  border-color: rgb(93, 91, 95) !important;
+}
+
+/* Separators in menus */
+.menuSeparatorInner {
+  border-color: rgb(93, 91, 95) !important;
+}
+
+/* The hovered menu item */
+.rstudio-themes-flat.rstudio-themes-dark-menus .gwt-MenuItem.gwt-MenuItem-selected, .rstudio-themes-flat.rstudio-themes-dark-menus .subMenuIcon-selected, .rstudio-themes-flat.rstudio-themes-dark-menus .gwt-SuggestBoxPopup .item-selected {
+  background: linear-gradient(0deg, rgba(19, 106, 207) 0%, rgba(20, 107, 211) 100%) !important;
+}
+
+/*unchecked .gwt-CheckBox checkbox*/
+.macintosh input[type="checkbox"], .linux .gwt-CheckBox input[type="checkbox"], .windows-highdpi .gwt-CheckBox input[type="checkbox"], .rstudio-themes-flat input[type="checkbox"] {
+  background: linear-gradient(0deg, rgba(111,111,114,1) 0%, rgba(85,88,89,1) 100%) !important;
+  border: none !important;
+}
+
+/*checked checkbox*/
+.macintosh input[type="checkbox"]:checked, .linux .gwt-CheckBox input[type="checkbox"]:checked, .windows-highdpi .gwt-CheckBox input[type="checkbox"]:checked, .rstudio-themes-flat input[type="checkbox"]:checked {
+  background: linear-gradient(0deg, rgba(29,98,203,1) 0%, rgba(37,113,227,1) 100%) !important;
+  border-color: rgb(33,35,36) !important;
+}
+
+
+/*Misc Borders*/
+.rstudio-themes-flat .rstudio-themes-dark-grey .GD15MCFCH3C,.rstudio-themes-flat .rstudio-themes-dark-grey .GD15MCFCH3C .GD15MCFCN2C, .rstudio-themes-flat .rstudio-themes-dark-grey .GD15MCFCJDD td.GD15MCFCIDD,.rstudio-themes-flat .rstudio-themes-dark-grey .GD15MCFCJDD td.GD15MCFCEDD,.rstudio-themes-flat .rstudio-themes-dark-grey .GD15MCFCJDD td.GD15MCFCBED,.rstudio-themes-flat .rstudio-themes-dark-grey .GD15MCFCJDD .GD15MCFCPCD, .rstudio-themes-flat .rstudio-themes-dark-grey .dataGridHeader, .rstudio-themes-flat .rstudio-themes-dark-grey .rstheme_minimizedWindowObject>div:last-child, .rstudio-themes-flat .rstudio-themes-dark-grey .rstheme_toolbarWrapper, .rstudio-themes-flat .rstudio-themes-dark-grey .GD15MCFCKV.GD15MCFCPO div.GD15MCFCMO .GD15MCFCIS, .rstudio-themes-flat .rstudio-themes-dark-grey .GD15MCFCKV.GD15MCFCPO,  #rsGridData_info {
+  border-color: rgb(50,50,53) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+/* table styles, meant to loosely mimic finder row style */
+.GD15MCFCMH tr:nth-child(even), td.GD15MCFCD4B.GD15MCFCF5B, tr.GD15MCFCJNB.GD15MCFCLNB {
+    background-color: rgb(44,45,51);
+    border-color: rgb(44,45,51);
+    color: rgb(218, 218, 218);
+}
+
+.GD15MCFCMH tr:nth-child(odd), td.GD15MCFCD4B.GD15MCFCF4B, tr.GD15MCFCJMB.GD15MCFCLNB {
+    background-color: rgb(41,42,48);
+    border-color: rgb(44,45,51);
+    color: rgb(218, 218, 218);
+}
+
+/* Options menus */
+.GFUP41PBHK, .GD15MCFCGK, .GD15MCFCI2 {
+  background-color: #37393a;
+}
+
+/* Option menu tab buttons */
+.GFUP41PBH.gwt-TabLayoutPanelTab {
+  border-top: none;
+  border-bottom: none;
+  border-right: 1px solid #555555;
+}
+
+/* gwt-TabLayoutPanelTab GFUP41PBH */
+
+.GFUP41PBH.gwt-TabLayoutPanelTab[aria-selected='false']{
+  background: #656565;
+}
+
+.GFUP41PBH.gwt-TabLayoutPanelTab[aria-selected='true']{
+  color: #262626;
+}
+
+
+/*Update Packages Table column names:*/
+th.GD15MCFCK4B {
+    background: rgb(49,49,51);
+    border-color: rgb(75,75,75);
+    color: white;
+    border-left: none;
+    border-right: none;
+}
+
+/*update packages blank area*/
+.GD15MCFCC4B, .GD15MCFCEOB {
+    background: var(--border-color);
+    border: none;
+}
+
+/*About R page text*/
+textarea.GD15MCFCFVC.GD15MCFCFVC-readonly {
+    background: rgb(37,39,40);
+    color: white;
+}
+
+/*help > markdown quick reference styles and help > roxygen quick reference styles*/
+#md_examples pre, #roxygen_examples pre {
+  background-color: rgb(62,63,68) !important;
+  border: none;
+  color: rgb(225,225,225);
+}
+
+/*Options Dialog Box*/
+
+.rstudio-themes-flat .gwt-DialogBox {
+    border: solid 1px rgb(75, 75, 75);
+    border-radius: 5px;
+    background: #8c3030;
+    overflow: hidden !important;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.6);
+}
+
+/*Remove default draggable spacers color*/
+.rstudio-themes-flat .rstudio-themes-dark-grey .gwt-SplitLayoutPanel-HDragger, .rstudio-themes-flat .rstudio-themes-dark-grey .gwt-SplitLayoutPanel-VDragger {
+  background: none !important;
+}
+
+/* color behind window panes and latter two appear as bg of git commit pane */
+div#rstudio_container, .gwt-SplitLayoutPanel-HDragger, .gwt-SplitLayoutPanel-VDragger {
+  background: var(--background-color) !important;
+}
+
+/* actual checkMARK */
+.macintosh .gwt-CheckBox input[type="checkbox"]:checked:before, .linux .gwt-CheckBox input[type="checkbox"]:checked:before, .windows-highdpi .gwt-CheckBox input[type="checkbox"]:checked:before, .rstudio-themes-flat input[type="checkbox"]:checked:before {
+  filter: invert(100%);
+}
+
+/* active tabs*/
+.rstudio-themes-flat .rstudio-themes-dark-grey .rstudio-themes-background, .rstudio-themes-flat .rstudio-themes-dark-grey .rstheme_toolbarWrapper, .rstudio-themes-flat .rstudio-themes-dark-grey .gwt-TabLayoutPanelTabs .gwt-TabLayoutPanelTab-selected table.rstheme_tabLayoutCenter, .rstudio-themes-flat .rstudio-themes-dark-grey .rstheme_secondaryToolbar, .rstudio-themes-flat .rstudio-themes-dark-grey .GD15MCFCKV.GD15MCFCPO div.GD15MCFCMO .GD15MCFCIS, .rstudio-themes-flat .rstudio-themes-dark-grey .gwt-TabLayoutPanelContent, .rstudio-themes-flat .rstudio-themes-dark-grey .gwt-TabLayoutPanel, .GD15MCFCCTC, .rstheme_toolbarWrapper table.GD15MCFCJU, .rstudio-themes-flat.rstudio-themes-dark-grey #rsGridData_info, .rstudio-themes-flat.rstudio-themes-dark-grey th, .rstudio-themes-flat.rstudio-themes-dark-grey td.first-child, .rstudio-themes-flat.rstudio-themes-dark-grey table.dataTable thead th  {
+  background: #282c34;
+  color: white !important;
+  border-color: var(--border-color);
+}
+
+/* data viewer table borders */
+ .rstudio-themes-flat.rstudio-themes-dark-grey table.dataTable tbody td, .rstudio-themes-flat.rstudio-themes-dark-grey table.dataTable thead th {
+   border-color: rgb(38,39,39)
+ }
+
+/*button labels in Git commit page*/
+.GD15MCFCMU {
+  color: white;
+}
+
+.dialogMiddleCenterInner button.gwt-Button.GD15MCFCH1 {
+  filter: invert(90%)
+}
+
+.rstudio-themes-flat .gwt-TabLayoutPanelTabs table.rstheme_tabLayoutCenter, .rstudio-themes-flat .rstheme_minimizedWindowObject table.rstheme_tabLayoutCenter {
+  border-radius: 0px;
+}
+
+/*empty tab space*/
+.rstudio-themes-flat .rstudio-themes-dark-grey .gwt-TabLayoutPanelTabs, .rstudio-themes-flat .rstudio-themes-dark-grey .rstheme_minimizedWindowObject .rstheme_center, .rstudio-themes-flat .rstudio-themes-dark.rstudio-themes-scrollbars ::-webkit-scrollbar-track, .rstudio-themes-flat .rstudio-themes-dark.rstudio-themes-scrollbars ::-webkit-scrollbar-corner, .rstudio-themes-flat .rstudio-themes-dark.rstudio-themes-scrollbars::-webkit-scrollbar-track, .rstudio-themes-flat .rstudio-themes-dark.rstudio-themes-scrollbars::-webkit-scrollbar-corner, .rstudio-themes-flat.rstudio-themes-dark-menus .rstudio-themes-scrollbars ::-webkit-scrollbar-track, .rstudio-themes-flat.rstudio-themes-dark-menus .rstudio-themes-scrollbars ::-webkit-scrollbar-corner {
+  background: var(--background-color);
+  color: rgb(160, 160, 160)
+}
+
+.rstudio-themes-flat .rstudio-themes-dark-grey .gwt-TabLayoutPanelTabs table.rstheme_tabLayoutCenter, .rstudio-themes-flat .rstudio-themes-dark-grey .rstheme_minimizedWindowObject table.rstheme_tabLayoutCenter {
+  background: var(--background-color);
+}
+
+.rstudio-themes-flat .rstudio-themes-dark-grey .gwt-TabLayoutPanelTabs table.rstheme_tabLayoutCenter:hover, .rstudio-themes-flat .rstudio-themes-dark-grey .rstheme_minimizedWindowObject table.rstheme_tabLayoutCenter:hover {
+  background: #323842;
+}
+
+/*create project from working directory background*/
+.GD15MCFCB3 {
+  background: rgba(55,57,58, .5) !important;
+}
+
+img[src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAAAWklEQVR42mNgQAJqamrSDOQCJVWNYCBeoqCiaUGeZjXNZWBMqiHKyjqyIE1wA8gxREVFw3LUEOIMAYmPGkIDQ+hjAEVeGNVMYmYaopqpUqhSVKxTpWKhpGoDAHh2oe84qb4DAAAAAElFTkSuQmCC"] {
+  filter: invert(100%);
+}
+
+.GD15MCFCN- img {
+  filter: brightness(.26) saturate(2);
+}
+
+
+
+/*window resize buttons in top right of each pane*/
+.GD15MCFCCS.rstheme_multiPodUtilityTabArea {
+    background: var(--background-color) !important;
+}
+
+.ace_editor, .rstudio-themes-flat.ace_editor_theme .profvis-flamegraph, .rstudio-themes-flat.ace_editor_theme, .rstudio-themes-flat .ace_editor_theme {
+  background-color: var(--background-color);
+  color: #F8F8F2;
+}
+
+.ace_cursor {
+  opacity: 1 !important;
+  border-left: 1px solid !important;
+}
+
+.ace_marker-layer .ace_selection {
+  background: #646f82;
+}
+
+.ace_selection.ace_start {
+  border-radius: 0px;
+}
+
+.ace_marker-layer .ace_step {
+  background: rgb(198, 219, 174);
+}
+
+.ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid #3B3A32;
+  border-radius: 3px !important;
+}
+
+.ace_marker-layer .ace_active-line {
+  background: #3E3D32;
+}
+
+/* Search panes */
+.rstudio-themes-flat.rstudio-themes-dark-menus .search, .rstudio-themes-flat .rstudio-themes-dark .search, .dialogMiddleCenter .search, input {
+    border-radius: 4px;
+    background: #1d1f23;
+    border-color: #464646;
+}
+
+/*seach bar in git commit no idea why its three separate images*/
+.GD15MCFCCTC .search .GD15MCFCLS, .GD15MCFCCTC .search .rstheme_center, .GD15MCFCCTC .search .GD15MCFCAR {
+    filter: invert(75%);
+}
+
+/* Search panes placeholder text */
+.rstudio-themes-flat.rstudio-themes-dark-menus .search input::placeholder, .rstudio-themes-flat .rstudio-themes-dark .search input::placeholder, .dialogMiddleCenter .search input::placeholder {
+  color: rgb(110, 110, 110);
+}
+
+/* Search pane on focus*/
+.rstudio-themes-flat.rstudio-themes-dark-menus .search:focus-within, .rstudio-themes-flat .rstudio-themes-dark .search:focus-within {
+    border-radius: 4px;
+    background: rgb(30, 30, 30);
+    border-color: rgb(46,46,47);
+}
+
+.ace_gutter-active-line {
+  background-color: #3E3D32;
+  color: red !important;
+}
+
+.ace_gutter-cell.ace_breakpoint {
+  color: white;
+}
+
+/* Remove Rstudios red dot breakpoint icon */
+.ace_gutter-cell.ace_breakpoint, .ace_gutter-cell.ace_inactive-breakpoint {
+  background-size: 0px 0px !important;
+}
+
+/* Blue ribbon meant to mimic Xcode breakpoint */
+.ace_gutter-cell.ace_breakpoint:after {
+  visibility: visible;
+  width: 95%;
+  height: 17px;
+  position: absolute;
+  left: 0%;
+  content: ' ';
+  float: right;
+  background: rgba(21, 125, 251);
+  clip-path: polygon(0 5%, 90% 5%, 100% 45%, 90% 85%, 0 85%);
+  z-index: -1;
+}
+
+
+/* Inactive breakpoint ribbon (same as other but a bit more translucent) */
+.ace_gutter-cell.ace_inactive-breakpoint:after {
+  visibility: visible;
+  width: 95%;
+  height: 17px;
+  position: absolute;
+  left: 0%;
+  content: ' ';
+  float: right;
+  background: rgba(21, 125, 251, .5);
+  clip-path: polygon(0 5%, 90% 5%, 100% 45%, 90% 85%, 0 85%);
+  z-index: -1;
+}
+
+.ace_marker-layer .ace_selected-word {
+  border: 1px solid #49483E
+}
+
+/* The theme selector demo code font (usually Monaco) */
+div#editor.GFUP41PBGW.ace_editor.ace_hidpi {
+  font-family: "Fira Code Retina", "Fira Code", "Ubuntu Mono", "Fira Mono", "Menlo", "Meslo", "Lucida Console", "Monaco", monospace !important;
+}
+
+/* Changes the font of markdown text in visual mardown editor */
+.pm-proportional-font {
+  /* font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !important; */
+}
+
+body pre, body code {
+  font-family: "Fira Code", "Menlo", "Ubuntu Mono", "Fira Mono", "Meslo", "Lucida Console", "Monaco", monospace !important;
+  color: var(--text-color) !important;
+}
+
+.ace_fold {
+  background-color: #FD7CB2;
+  border-color: #F8F8F2;
+}
+
+.ace_invisible {
+  color: #3B3A32;
+}
+
+/* caption at the top of the dialog boxes like the options pane*/
+.Caption {
+  color: rgb(189,189,191) !important;
+  font-size: 9pt !important;
+  padding: 4pt !important;
+  text-align: center;
+}
+
+/*top of the settings dialog, where OPTIONS is written*/
+.dialogTopCenter {
+  background: rgb(49,50,51) !important;
+  border-bottom: 1px solid rgb(19,20,21) !important;
+}
+
+.rstudio-themes-flat .rstudio-themes-dark-grey .dataGridHeader {
+  background: rgb(49,51,51)
+}
+
+/*Review Changes Dialog for Git Commit*/
+.GD15MCFCDTC, .GD15MCFCASC {
+  background: rgb(33, 35, 38);
+  color: white;
+}
+
+.GD15MCFCPSC {
+  background: var(--background-color);
+  color: white;
+}
+
+/*Git top left buttons*/
+table.GD15MCFCJW.GD15MCFCLW td, table.GD15MCFCJW.GD15MCFCOW {
+  color: black;
+  filter: invert(85%) !important;
+}
+
+/*checkboxes in GitHub pane why they make them from images idk*/
+img[src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABzElEQVR42u2Wy07CQBhGeRl3iF2Bz+DaRE0UNsYn0Z2vIE+hxLglMZq4IwYpV4G23JGrLS7GOTWsDEzbNMZFJ/l3c843l6bzx2L/aWhaaiehJTPxRPIysZe6DlIuKx24PIXuaqmDw+Ozm9u7e71QeHVKpbIIUrA4cOFU7vToJJOVkK3rFVEu/1SlUvVVaw4HLpxbd87R5HIPOlC1WhO1Wl3U6w23Go13T7WeD4sDF07cG4O5l2LxzQFC0my2RKvVFu22Icv0WIbLwOLAJZ2ruLZ/tXnH8qNgtUBITLMjOp2e6Hb7otcbeCrmwsDiwIUT99ZgJhqG5cL9/lAMh2MxGn2I8XjiqZgLA4sDF05lMKsEGAxGrmgymYnpdC5ms4WnYi4MLA5cOJXBHBGrBUQyny/FYvEplkvbUzEXBhYHLpzKYFbIUbFqBMhse+WrYGBx4MKpDObj4J5YMatH5DhfvgoGFgcunMpgvkyOiPta7zZIMCwOXDij4Cg4Cv6bYJ5F+V91wg42TUvxLMrHOp9/1MMOxrm1EaA9SacvspbVtcP6ZeLCqWz6aMxO0+fZp+cXdu4EfSRgceBSNnu/2lt5L4HbW1g/7W00ohHW+AYpkWmxvX/prAAAAABJRU5ErkJggg=="] {
+  filter: invert(85%) !important;
+}
+
+img[src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAEg0lEQVR42rWX709bZRTHL+0ttPcHLaWlUGAo2xCcZBPLpT9oewvr2lD1hcYfM+oL4huTaZA44ohbeON/sZf60pAt0QWcvtBka4BtMVkklFJaKMighTF+rNPkXp9zeS67Y6XcNrPJt23S55zPOc9z7nNOCWL/9YbO3tJiMdceO0Wb7UFDpe28nrX261jLZzrW3K9K1J70yIY12/urbI3na46dDJ549fSp+tbWagTREQdeZTabjW5re73J2X2W9/iDw13u3lHOxUcdXb4ppEkHh9R1iLgDQjZdrkDU7T076g2Ehh3I58vIt91up4C1D4VIDIbqeoB++HH/1YGBofj4+K+5WGxWSCZT4lGan09KSiTmxbm5hDg7Gxfv358WbtwYz1348ut45O0Prp5xdPPAUGatQTKUlzOv+XrC3wxduhxHxkI6vSSm08sqtSQuLqbFhYVFKRAIIB6fE2MxCOAv4fMLg3Gnp3eYpqvaEYvCTEKLVEmQBpfLF/zx9z9uPV5ZWRUfPFgTV1czqgRrwWZ5eUUKBAKAHZDhP/08lvN4g9dM1jofQZhMctbwVkWSeh5FdXtp6W8hm90Q19cfihsbm6oEa8FmbS0rBYB8SHDIXN52tzc4Udd4IsQwjBXx9AAuRzIjcA/n6pkCR5ubW+KjR9vi1taOKsFasAHbTGZdNFwckzJPpRakM4esPb5z9xqa2/poq7WWQIW8DyZIfYBzBSbByfb2rriz81jc3c2pEqwFG7AFKAi2XZm1xx+629TcFqEsFjthsbAArlCCwQE4y+X+KUpgI0NBsOVQcHDWT8EnI3uVba58DgzRg6MnT/4tSkooCAoOql0uMgDXN8lg4llwJwLL2SodFgsFQbXDOcPj9TzYrA5cCJ4PCkX2wsD54PmgUOUvHKyE54OC7f8GPkxyZZcE5vKA1cBhTXHgA1XNufODC8Hl348Ce/lCGRcAFzpvNWAfH5Zurrxg1PwLggs9XmoyPgzcg7rT1FHgw3R0xqF7sNUURdkR7+ldTeqZgMsbjCIjoVQwXLfQKKBNKq/M6ekZwesLTljrXgoTBF2LeLQMriL1bDff2zd65+6fuVKbBDQYaI/Qm5VNYmzsZs7nD19nTBY/Yllg4pHbIkvTpjOhyLtXLl/5LpnNPhRKbYuwzTAQyG1xZiYmDF78NoXGqhGKMnbgRwmSJUiIwGisafb4wn3vvP/J918NXkrduj2Zy2Q2hFIGAcg2kUgKv9z8LffFwFDqvY8+/QFNnBGj0Xgcz1w6eeYqZ5haa0Nza3vrae5Nzs2PdDr91zo4bxTG1Y5O70QxkkZcpy+KJprraHId6XD630Ku24GBsyVlMPpiZWiatlWwbAvaEgfDmHjaaA7SleaQ9KlGtHFP2IYxmXjKaHSwrOUVuqbGRlitDM5WK4+3GnzWBnwGMPVD9cH11ojUgD/VSF5bj31UY58GzNDK420ZFs5c+rECnwWNnzkWG6uRvJ7GPiqwTxIzypT/JpQBaBSBaPHWlCKtAqTJB8wH1igMSSy1QFKRnVbh7xnwf9zVX4gKU481AAAAAElFTkSuQmCC"] {
+  filter: invert(85%) grayscale(100%) !important;
+}
+
+img[src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAUCAYAAACnOeyiAAAAXklEQVR42mNgAIL///8zMYSGhjIDGYIMIiIMvECGMwMDN4M4kFEDUqIIZKwDMdSBjAsghj6Q8QPEMAAy/lOBoQekv4AYKkDGfgZeXl4RICOLQUtLiw3IUAJJMQIZ7AC2tU2tXJxOYgAAAABJRU5ErkJggg=="] {
+  filter: invert(100%)
+}
+
+label[for="gwt-uid-54"]{
+  color: white;
+}
+
+/*Git popup*/
+.popupMiddleCenterInner.popupContent {
+  background-color: rgba(33, 35, 38, .5);
+  color: white;
+  border-radius: 3px 3px 3px 3px !important;
+}
+
+.gwt-MenuBar>table {
+    padding: 5px;
+    border-radius: 3px 3px 3px 3px !important;
+}
+
+.gwt-MenuBar>table>img {
+    visibility: hidden !important;
+}
+
+.popupTop, .popupMiddleRight, .popupBottom, .popupMiddleLeft {
+  visibility: hidden;
+}
+
+.gwt-MenuItem-selected, .subMenuIcon-selected, .gwt-SuggestBoxPopup .item-selected {
+  background: rgb(86, 126, 197) !important;
+}
+
+.GD15MCFCEMC:focus .GD15MCFCPLC {
+  background: rgb(18, 95, 189) !important;
+}
+
+/*table head at git*/
+.GD15MCFCDTC thead th, .GD15MCFCASC thead th, .GD15MCFCEMC thead th {
+    color: white;
+    border: none !important;
+    border-top: rgb(75,75,75) !important;
+    border-bottom: rgb(75,75,75);
+    background: rgb(49,49,51) !important;
+    outline: none;
+}
+
+tr.GD15MCFCPLC {
+    background-color: rgb(64,62,63)
+}
+
+/*table at Git*/
+td.GD15MCFCHNC.GD15MCFCJNC, .GD15MCFCJOC {
+  border: none !important;
+  border-bottom: 1px solid black !important;
+}
+
+
+.GD15MCFCFTC.GD15MCFCAW, .GD15MCFCMTC {
+  background: rgb(48,48,48);
+  border: 1px solid rgb(103,101,103);
+  border-radius: 0px;
+  color: white;
+}
+
+/* addition text*/
+.GD15MCFCGPC {
+  color: rgb(61, 213, 83);
+  background-color: rgb(61, 213, 83, .21);
+}
+
+.GD15MCFCGE:focus .GD15MCFCBE .GD15MCFCFSC {
+  color: white;
+  background-color: rgb(61, 213, 83, 1);
+}
+
+.GD15MCFCKED {
+  border: 1px solid rgb(45,45,45);
+}
+
+.GD15MCFCGPC.GD15MCFCNPC>td, .GD15MCFCCPC.GD15MCFCNPC>td {
+  border-top: none !important;
+}
+
+.GD15MCFCCPC.GD15MCFCDPC>td, .GD15MCFCGPC.GD15MCFCDPC>td {
+  border-bottom: none !important;
+}
+
+/* deletion text */
+.GD15MCFCCPC {
+  color: rgb(234, 53, 123);
+  background-color: rgba(234, 53, 123, .21)
+}
+
+/* selected addition slash deletion which was clicked away from */
+.GD15MCFCKOC, .GD15MCFCLOC, .GD15MCFCBE { 
+  color: white;
+  background-color: rgb(76, 76, 76) !important;
+}
+
+/* selected addition slash deletion */
+.GD15MCFCPOC:focus .GD15MCFCKOC, .GD15MCFCPOC:focus .GD15MCFCLOC, .GD15MCFCGE:focus .GD15MCFCBE {
+  background-color: rgb(20, 107, 211) !important;
+}
+
+/* spacer between additions and deletions describing it */
+.GD15MCFCBPC {
+  background-color: rgb(50, 50, 50) !important;
+}
+
+/* stage buttons */
+.GD15MCFCKMC {
+  color: black !important;
+}
+
+.GD15MCFCKMC div {
+  filter: grayscale(1) invert(100%) brightness(90%);
+}
+
+.gwt-DialogBox.gwt-DialogBox-ModalDialog.GD15MCFCO- td.dialogMiddleLeft, .gwt-DialogBox.gwt-DialogBox-ModalDialog.GD15MCFCO- td.dialogMiddleRight, .gwt-DialogBox.gwt-DialogBox-ModalDialog.GD15MCFCO- tr.dialogBottom {
+  filter: invert(80%)
+}
+
+table.GD15MCFCPOC.GD15MCFCAW.GD15MCFCMPC button.gwt-Button.GD15MCFCH1.gwt-Button-DefaultDialogAction td {
+  filter: invert(85%)
+}
+
+/* commit button*/
+button.gwt-Button.GD15MCFCH1.GD15MCFCETC {
+    filter: invert(90%);
+}
+
+.dialogMiddleCenter {
+  background: var(--border-color) !important;
+  color: white;
+}
+
+.rstudio-themes-flat.editor_dark .ace_editor_theme .GD15MCFCGI {
+    color: #ffffff;
+}
+
+select {
+    font-size: 11px;
+    text-indent: 0.1em;
+    background-color: #252728 !important;
+    color: white;
+    border: none !important;
+}
+
+/*various text-type fields in options*/
+table.GD15MCFCI2.GD15MCFCF2, select.gwt-ListBox.GD15MCFCNCB, .gwt-TextBox, input.gwt-TextBox.gwt-TextBox-readonly, .GD15MCFCFGD, .GD15MCFCNND, .GD15MCFCIMD, .GD15MCFCDND, .GD15MCFCAK.GD15MCFCOJ .gwt-Textbox, .gwt-DialogBox input[type="text"], select.gwt-ListBox.GD15MCFCBBB, .GD15MCFCHHB {
+  background: rgb(41,44,46) !important;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+
+/*sidebar of options dialog*/
+.GFUP41PBHK, .GD15MCFCGK, .GD15MCFCI2  {
+background: rgb(37,39,40) !important;
+border-color: rgb(92,93,94) !important;
+}
+
+/*selected sidebar*/
+table.GD15MCFCFK.GD15MCFCLJ, .GD15MCFCJ2.GD15MCFCNQ.GD15MCFCE2 {
+  background: rgb(14,92,205) !important;
+}
+
+/*markdown creation pane info caption*/
+.GD15MCFCP0C {
+  color: white;
+}
+
+/*Import Data Options*/
+.GD15MCFCNMD {
+  background: rgb(61,62,63);
+  border: 1px solid rgb(77,78,79);
+  border-radius: 3px;
+}
+
+/* Options menus */
+table[role='tabpanel'] .gwt-TabLayoutPanel .gwt-TabLayoutPanelContentContainer {
+  background-color: #252728;
+  border: 1px solid rgb(92,93,94);
+}
+
+.GD15MCFCGP .gwt-TabLayoutPanelContentContainer, .GD15MCFCOID, .GD15MCFCNLD {
+    background: rgb(37,39,40) !important;
+    border: 1px solid rgb(92,93,94);
+    border-radius: 3px;
+}
+
+.GD15MCFCEPC {
+  background: rgb(46,48,51);
+  color: white;
+}
+
+
+/*selected button at top of options dialog*/
+.gwt-TabLayoutPanelTab.GD15MCFCH.gwt-TabLayoutPanelTab-selected, table.GD15MCFCJW.GD15MCFCLW {
+    background: linear-gradient(0deg, rgba(60,60,60,1) 0%, rgba(55,55,55,1) 100%) !important;
+    color: white !important;
+    border-color: rgba(96,96,97) !important;
+}
+
+.gwt-TabLayoutPanelTab.GD15MCFCH.gwt-TabLayoutPanelTab-selected .gwt-Label {
+    color: white !important;
+}
+
+/* unselected buttons at top of dialog*/
+div.gwt-TabLayoutPanelTab.GD15MCFCH {
+  background: linear-gradient(0deg, rgba(39,39,39,1) 0%, rgba(45,45,45,1) 100%);
+  color: rgb(160, 160, 160) !important;
+  border-color: rgba(96,96,97) !important;
+}
+
+div.gwt-TabLayoutPanelTab.GD15MCFCH:hover {
+  background: linear-gradient(0deg, rgba(36,36,36,1) 0%, rgba(41,41,41,1) 100%);
+  color: rgb(160, 160, 160) !important;
+  border-color: rgba(96,96,97) !important;
+}
+
+div.gwt-TabLayoutPanelTab.GD15MCFCH .gwt-Label {
+  color: rgb(160, 160, 160) !important;
+}
+
+
+/*Some buttons in the options pane*/
+.rstudio-themes-flat button.gwt-Button-DialogAction>table:first-child, .rstudio-themes-flat button.GD15MCFCB1>table:first-child, .rstudio-themes-flat button.GD15MCFCH1>table:first-child, button.GD15MCFCB1 table tbody {
+    border-radius: 3px !important;
+    background: rgb(108,108,108) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+iframe.gwt-Frame {
+    border: none;
+}
+
+.GD15MCFCO0 {
+    color: white !important;
+}
+
+.GD15MCFCBMB td.GD15MCFCBMB {
+  background: rgb(36,39,41);
+  border: 1px solid rgb(75,75,75);
+  color: white;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.GD15MCFCFK.gwt-Label {  /* , .gwt-TabLayoutPanelContentContainer td */
+  color: white !important;
+}
+
+.GFUP41PBFW {
+  background-color: unset;
+}
+
+button.GFUP41PBNU.GFUP41PBOQ td div.GFUP41PBPU {
+  color: white;
+}
+
+.GFUP41PBLJ.__rstudio_modal_first_focus {
+  color: #262626;
+  background: #5daef2;
+}
+
+.gwt-DialogBox.gwt-DialogBox-ModalDialog {
+  color: #262626;
+}
+
+/*hyperlinks at the bottom of some of the settings and in R Help and file links in commit page */
+.rstudio-HyperlinkLabel, gwt-Anchor {
+  color: rgb(67,137,211) !important
+}
+
+a.gwt-Anchor.GD15MCFCNQ {
+  color: white !important;
+}
+
+div .gwt-Label.GD15MCFCF3 {
+  color: white !important;
+}
+
+.gwt-Button {
+  background: linear-gradient(0deg, rgba(201,201,201,1) 0%, rgba(209,210,210,1) 100%) !important;
+  border-radius: 7px;
+  color: black;
+}
+
+.GFUP41PBHRB td.GFUP41PBHRB {
+  background-color: unset;
+}
+
+
+.GD15MCFCAK {
+  color: white !important
+}
+
+.dialogContent {
+  color: white !important;
+}
+
+
+.ace_line .ace_constant.ace_language {
+  color: #e26b73;
+}
+
+/* Bold and italics in Markdown */
+.ace_constant.ace_language.ace_boolean.ace_text,
+.ace_constant.ace_numeric.ace_text {
+  color: #a29aec;
+}
+
+/* Console code output */
+span .GFUP41PBN-B.ace_constant.ace_language {
+  color: #a29aec;
+}
+
+
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete {
+   background: #2f3941;
+   border: solid 1px rgb(71,71,71) !important;
+   color: #f0f0f0;
+}
+
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line,
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_line-hover {
+   background: rgba(255, 255, 255, 0.15);
+   border: none
+}
+
+.ace_active-line {
+  background: rgb(47,50,57);
+}
+
+
+/* ------------------------------------
+// ONE DARK STUFF (Editor)
+// ------------------------------------ */
+
+.ace_gutter {
+  background: var(--background-color);
+  color: #6A6F7A;
+}
+
+.ace_print-margin {
+  width: 1px;
+  background: #e8e8e8;
+}
+
+.ace_editor, .rstudio-themes-flat.ace_editor_theme .profvis-flamegraph, .rstudio-themes-flat.ace_editor_theme, .rstudio-themes-flat .ace_editor_theme {
+  background-color: var(--background-color);
+  color: #abb2bf;
+}
+
+.ace_cursor {
+  color: #528BFF;
+}
+
+.ace_marker-layer .ace_selection {
+  background: #3D4350;
+}
+
+.ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px var(--background-color);
+  border-radius: 2px;
+}
+
+.ace_marker-layer .ace_step {
+  background: rgb(198, 219, 174);
+}
+
+.ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid #747369;
+}
+
+.ace_marker-layer .ace_active-line {
+  background: rgba(76, 87, 103, 0.19);
+}
+
+.ace_gutter-active-line {
+  background-color: rgba(76, 87, 103, 0.19);
+}
+
+.ace_marker-layer .ace_selected-word {
+  border: 1px solid #3D4350
+}
+
+.ace_fold {
+  background-color: #61AFEF;
+  border-color: #abb2bf;
+}
+
+.ace_invisible {
+  color: #747369;
+}
+
+
+.ace_keyword {
+  color: #C678DD;
+
+}
+
+.ace_keyword.ace_operator {
+    color: #51b6c3;
+}
+
+.ace_paren {
+  color: #abb2bf !important;
+}
+
+.ace_keyword.ace_other.ace_unit {
+  color: #d19a66;
+}
+
+.ace_constant {
+  color: #d19a66;
+}
+
+.ace_constant.ace_numeric {
+  color: #d19a66;
+}
+
+/* Commas */
+.ace_punctuation {
+  color: #abb2c0 !important;
+}
+
+.ace_heading {
+  color: #51b6c3;
+}
+
+.ace_meta.ace_tag {
+  color: #51b6c3;
+}
+
+.ace_layer {
+   z-index: 3;
+}
+
+.ace_layer.ace_print-margin-layer {
+   z-index: 2;
+}
+
+.ace_layer.ace_marker-layer {
+   z-index: 1;
+}
+
+.ace_constant.ace_character.ace_escape {
+  color: #51b6c3;
+}
+
+.ace_support.ace_function {
+  color: #61AFEF;
+
+}
+
+.ace_support.ace_class {
+  color: #E5C07B;
+}
+
+.ace_support.ace_type {
+  color: #abb2bf;
+
+}
+
+.ace_storage {
+  color: #C678DD;
+}
+
+.ace_invalid.ace_illegal {
+  color: #FFFFFF;
+  background-color: #f2777a;
+}
+
+.ace_invalid.ace_deprecated {
+  color: #272B33;
+  background-color: #d27b53;
+}
+
+.ace_string {
+  color: #98C379;
+}
+
+.ace_string.ace_regexp {
+  color: #51b6c3;
+}
+
+.ace_comment {
+  font-style: var(--comment-style);
+  color: #5C6370;
+}
+
+.ace_variable {
+  color: #E06C75;
+}
+
+.ace_meta.ace_selector {
+  color: #C678DD;
+
+}
+
+.ace_entity.ace_other.ace_attribute-name {
+  color: #d19a66;
+
+}
+
+.ace_entity.ace_name.ace_function {
+  color: #61AFEF;
+
+}
+
+.ace_entity.ace_name.ace_tag {
+  color: #E06C75;
+}
+
+.ace_markup.ace_list {
+  color: #E06C75;
+}
+
+.nocolor.ace_editor .ace_line span {
+  color: #c678dd !important;
+}
+
+.ace_bracket {
+  margin: 0 !important;
+  border: 0 !important;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.ace_marker-layer .ace_foreign_line {
+  position: absolute;
+  z-index: -1;
+  background-color: #282C34;
+}
+.ace_marker-layer .ace_active_debug_line {
+  position: absolute;
+  z-index: -1;
+  background-color: #948536;
+}
+.ace_marker-layer .ace_find_line {
+  position: absolute;
+  z-index: -1;
+  background-color: #434750;
+}
+.ace_console_error {
+  background-color: #434750;
+}
+.terminal {
+  background-color: var(--background-color);
+  color: #abb2bf;
+  font-feature-settings: "liga" 0;
+  position: relative;
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+.terminal.xterm-cursor-style-block.focus:not(.xterm-cursor-blink-on) .terminal-cursor {
+  background-color: #CCC;
+  color: var(--background-color);
+}
+
+.terminal.focus.xterm-cursor-style-bar:not(.xterm-cursor-blink-on) .terminal-cursor::before,
+.terminal.focus.xterm-cursor-style-underline:not(.xterm-cursor-blink-on) .terminal-cursor::before {
+  content: '';
+  position: absolute;
+  background-color: #CCC;
+}
+.terminal:not(.focus) .terminal-cursor {
+  outline: 1px solid #CCC;
+  outline-offset: -1px;
+}
+.terminal .xterm-selection div {
+   position: absolute;
+   background-color: #CCC;
+}
+.terminal .xterm-viewport {
+  background-color: var(--background-color);
+  overflow-y: scroll;
+}
+.xtermInvertColor { color: var(--background-color); }
+.xtermInvertBgColor { background-color: #abb2bf; }
+.xtermBold { font-weight: bold; }
+.xtermUnderline { text-decoration: underline; }
+.xtermBlink { text-decoration: blink; }
+.xtermHidden { visibility: hidden; }
+.xtermItalic { font-style: italic; }
+.xtermStrike { text-decoration: line-through; }
+.xtermColor0 { color: #2e3436 !important; }
+.xtermBgColor0 { background-color: #2e3436; }
+.xtermColor1 { color: #cc0000 !important; }
+.xtermBgColor1 { background-color: #cc0000; }
+.xtermColor2 { color: #4e9a06 !important; }
+.xtermBgColor2 { background-color: #4e9a06; }
+.xtermColor3 { color: #c4a000 !important; }
+.xtermBgColor3 { background-color: #c4a000; }
+.xtermColor4 { color: #3465a4 !important; }
+.xtermBgColor4 { background-color: #3465a4; }
+.xtermColor5 { color: #75507b !important; }
+.xtermBgColor5 { background-color: #75507b; }
+.xtermColor6 { color: #06989a !important; }
+.xtermBgColor6 { background-color: #06989a; }
+.xtermColor7 { color: #d3d7cf !important; }
+.xtermBgColor7 { background-color: #d3d7cf; }
+.xtermColor8 { color: #555753 !important; }
+.xtermBgColor8 { background-color: #555753; }
+.xtermColor9 { color: #ef2929 !important; }
+.xtermBgColor9 { background-color: #ef2929; }
+.xtermColor10 { color: #8ae234 !important; }
+.xtermBgColor10 { background-color: #8ae234; }
+.xtermColor11 { color: #fce94f !important; }
+.xtermBgColor11 { background-color: #fce94f; }
+.xtermColor12 { color: #729fcf !important; }
+.xtermBgColor12 { background-color: #729fcf; }
+.xtermColor13 { color: #ad7fa8 !important; }
+.xtermBgColor13 { background-color: #ad7fa8; }
+.xtermColor14 { color: #34e2e2 !important; }
+.xtermBgColor14 { background-color: #34e2e2; }
+.xtermColor15 { color: #eeeeec !important; }
+.xtermBgColor15 { background-color: #eeeeec; }
+.xtermColor16 { color: #000000 !important; }
+.xtermBgColor16 { background-color: #000000; }
+.xtermColor17 { color: #00005f !important; }
+.xtermBgColor17 { background-color: #00005f; }
+.xtermColor18 { color: #000087 !important; }
+.xtermBgColor18 { background-color: #000087; }
+.xtermColor19 { color: #0000af !important; }
+.xtermBgColor19 { background-color: #0000af; }
+.xtermColor20 { color: #0000d7 !important; }
+.xtermBgColor20 { background-color: #0000d7; }
+.xtermColor21 { color: #0000ff !important; }
+.xtermBgColor21 { background-color: #0000ff; }
+.xtermColor22 { color: #005f00 !important; }
+.xtermBgColor22 { background-color: #005f00; }
+.xtermColor23 { color: #005f5f !important; }
+.xtermBgColor23 { background-color: #005f5f; }
+.xtermColor24 { color: #005f87 !important; }
+.xtermBgColor24 { background-color: #005f87; }
+.xtermColor25 { color: #005faf !important; }
+.xtermBgColor25 { background-color: #005faf; }
+.xtermColor26 { color: #005fd7 !important; }
+.xtermBgColor26 { background-color: #005fd7; }
+.xtermColor27 { color: #005fff !important; }
+.xtermBgColor27 { background-color: #005fff; }
+.xtermColor28 { color: #008700 !important; }
+.xtermBgColor28 { background-color: #008700; }
+.xtermColor29 { color: #00875f !important; }
+.xtermBgColor29 { background-color: #00875f; }
+.xtermColor30 { color: #008787 !important; }
+.xtermBgColor30 { background-color: #008787; }
+.xtermColor31 { color: #0087af !important; }
+.xtermBgColor31 { background-color: #0087af; }
+.xtermColor32 { color: #0087d7 !important; }
+.xtermBgColor32 { background-color: #0087d7; }
+.xtermColor33 { color: #0087ff !important; }
+.xtermBgColor33 { background-color: #0087ff; }
+.xtermColor34 { color: #00af00 !important; }
+.xtermBgColor34 { background-color: #00af00; }
+.xtermColor35 { color: #00af5f !important; }
+.xtermBgColor35 { background-color: #00af5f; }
+.xtermColor36 { color: #00af87 !important; }
+.xtermBgColor36 { background-color: #00af87; }
+.xtermColor37 { color: #00afaf !important; }
+.xtermBgColor37 { background-color: #00afaf; }
+.xtermColor38 { color: #00afd7 !important; }
+.xtermBgColor38 { background-color: #00afd7; }
+.xtermColor39 { color: #00afff !important; }
+.xtermBgColor39 { background-color: #00afff; }
+.xtermColor40 { color: #00d700 !important; }
+.xtermBgColor40 { background-color: #00d700; }
+.xtermColor41 { color: #00d75f !important; }
+.xtermBgColor41 { background-color: #00d75f; }
+.xtermColor42 { color: #00d787 !important; }
+.xtermBgColor42 { background-color: #00d787; }
+.xtermColor43 { color: #00d7af !important; }
+.xtermBgColor43 { background-color: #00d7af; }
+.xtermColor44 { color: #00d7d7 !important; }
+.xtermBgColor44 { background-color: #00d7d7; }
+.xtermColor45 { color: #00d7ff !important; }
+.xtermBgColor45 { background-color: #00d7ff; }
+.xtermColor46 { color: #00ff00 !important; }
+.xtermBgColor46 { background-color: #00ff00; }
+.xtermColor47 { color: #00ff5f !important; }
+.xtermBgColor47 { background-color: #00ff5f; }
+.xtermColor48 { color: #00ff87 !important; }
+.xtermBgColor48 { background-color: #00ff87; }
+.xtermColor49 { color: #00ffaf !important; }
+.xtermBgColor49 { background-color: #00ffaf; }
+.xtermColor50 { color: #00ffd7 !important; }
+.xtermBgColor50 { background-color: #00ffd7; }
+.xtermColor51 { color: #00ffff !important; }
+.xtermBgColor51 { background-color: #00ffff; }
+.xtermColor52 { color: #5f0000 !important; }
+.xtermBgColor52 { background-color: #5f0000; }
+.xtermColor53 { color: #5f005f !important; }
+.xtermBgColor53 { background-color: #5f005f; }
+.xtermColor54 { color: #5f0087 !important; }
+.xtermBgColor54 { background-color: #5f0087; }
+.xtermColor55 { color: #5f00af !important; }
+.xtermBgColor55 { background-color: #5f00af; }
+.xtermColor56 { color: #5f00d7 !important; }
+.xtermBgColor56 { background-color: #5f00d7; }
+.xtermColor57 { color: #5f00ff !important; }
+.xtermBgColor57 { background-color: #5f00ff; }
+.xtermColor58 { color: #5f5f00 !important; }
+.xtermBgColor58 { background-color: #5f5f00; }
+.xtermColor59 { color: #5f5f5f !important; }
+.xtermBgColor59 { background-color: #5f5f5f; }
+.xtermColor60 { color: #5f5f87 !important; }
+.xtermBgColor60 { background-color: #5f5f87; }
+.xtermColor61 { color: #5f5faf !important; }
+.xtermBgColor61 { background-color: #5f5faf; }
+.xtermColor62 { color: #5f5fd7 !important; }
+.xtermBgColor62 { background-color: #5f5fd7; }
+.xtermColor63 { color: #5f5fff !important; }
+.xtermBgColor63 { background-color: #5f5fff; }
+.xtermColor64 { color: #5f8700 !important; }
+.xtermBgColor64 { background-color: #5f8700; }
+.xtermColor65 { color: #5f875f !important; }
+.xtermBgColor65 { background-color: #5f875f; }
+.xtermColor66 { color: #5f8787 !important; }
+.xtermBgColor66 { background-color: #5f8787; }
+.xtermColor67 { color: #5f87af !important; }
+.xtermBgColor67 { background-color: #5f87af; }
+.xtermColor68 { color: #5f87d7 !important; }
+.xtermBgColor68 { background-color: #5f87d7; }
+.xtermColor69 { color: #5f87ff !important; }
+.xtermBgColor69 { background-color: #5f87ff; }
+.xtermColor70 { color: #5faf00 !important; }
+.xtermBgColor70 { background-color: #5faf00; }
+.xtermColor71 { color: #5faf5f !important; }
+.xtermBgColor71 { background-color: #5faf5f; }
+.xtermColor72 { color: #5faf87 !important; }
+.xtermBgColor72 { background-color: #5faf87; }
+.xtermColor73 { color: #5fafaf !important; }
+.xtermBgColor73 { background-color: #5fafaf; }
+.xtermColor74 { color: #5fafd7 !important; }
+.xtermBgColor74 { background-color: #5fafd7; }
+.xtermColor75 { color: #5fafff !important; }
+.xtermBgColor75 { background-color: #5fafff; }
+.xtermColor76 { color: #5fd700 !important; }
+.xtermBgColor76 { background-color: #5fd700; }
+.xtermColor77 { color: #5fd75f !important; }
+.xtermBgColor77 { background-color: #5fd75f; }
+.xtermColor78 { color: #5fd787 !important; }
+.xtermBgColor78 { background-color: #5fd787; }
+.xtermColor79 { color: #5fd7af !important; }
+.xtermBgColor79 { background-color: #5fd7af; }
+.xtermColor80 { color: #5fd7d7 !important; }
+.xtermBgColor80 { background-color: #5fd7d7; }
+.xtermColor81 { color: #5fd7ff !important; }
+.xtermBgColor81 { background-color: #5fd7ff; }
+.xtermColor82 { color: #5fff00 !important; }
+.xtermBgColor82 { background-color: #5fff00; }
+.xtermColor83 { color: #5fff5f !important; }
+.xtermBgColor83 { background-color: #5fff5f; }
+.xtermColor84 { color: #5fff87 !important; }
+.xtermBgColor84 { background-color: #5fff87; }
+.xtermColor85 { color: #5fffaf !important; }
+.xtermBgColor85 { background-color: #5fffaf; }
+.xtermColor86 { color: #5fffd7 !important; }
+.xtermBgColor86 { background-color: #5fffd7; }
+.xtermColor87 { color: #5fffff !important; }
+.xtermBgColor87 { background-color: #5fffff; }
+.xtermColor88 { color: #870000 !important; }
+.xtermBgColor88 { background-color: #870000; }
+.xtermColor89 { color: #87005f !important; }
+.xtermBgColor89 { background-color: #87005f; }
+.xtermColor90 { color: #870087 !important; }
+.xtermBgColor90 { background-color: #870087; }
+.xtermColor91 { color: #8700af !important; }
+.xtermBgColor91 { background-color: #8700af; }
+.xtermColor92 { color: #8700d7 !important; }
+.xtermBgColor92 { background-color: #8700d7; }
+.xtermColor93 { color: #8700ff !important; }
+.xtermBgColor93 { background-color: #8700ff; }
+.xtermColor94 { color: #875f00 !important; }
+.xtermBgColor94 { background-color: #875f00; }
+.xtermColor95 { color: #875f5f !important; }
+.xtermBgColor95 { background-color: #875f5f; }
+.xtermColor96 { color: #875f87 !important; }
+.xtermBgColor96 { background-color: #875f87; }
+.xtermColor97 { color: #875faf !important; }
+.xtermBgColor97 { background-color: #875faf; }
+.xtermColor98 { color: #875fd7 !important; }
+.xtermBgColor98 { background-color: #875fd7; }
+.xtermColor99 { color: #875fff !important; }
+.xtermBgColor99 { background-color: #875fff; }
+.xtermColor100 { color: #878700 !important; }
+.xtermBgColor100 { background-color: #878700; }
+.xtermColor101 { color: #87875f !important; }
+.xtermBgColor101 { background-color: #87875f; }
+.xtermColor102 { color: #878787 !important; }
+.xtermBgColor102 { background-color: #878787; }
+.xtermColor103 { color: #8787af !important; }
+.xtermBgColor103 { background-color: #8787af; }
+.xtermColor104 { color: #8787d7 !important; }
+.xtermBgColor104 { background-color: #8787d7; }
+.xtermColor105 { color: #8787ff !important; }
+.xtermBgColor105 { background-color: #8787ff; }
+.xtermColor106 { color: #87af00 !important; }
+.xtermBgColor106 { background-color: #87af00; }
+.xtermColor107 { color: #87af5f !important; }
+.xtermBgColor107 { background-color: #87af5f; }
+.xtermColor108 { color: #87af87 !important; }
+.xtermBgColor108 { background-color: #87af87; }
+.xtermColor109 { color: #87afaf !important; }
+.xtermBgColor109 { background-color: #87afaf; }
+.xtermColor110 { color: #87afd7 !important; }
+.xtermBgColor110 { background-color: #87afd7; }
+.xtermColor111 { color: #87afff !important; }
+.xtermBgColor111 { background-color: #87afff; }
+.xtermColor112 { color: #87d700 !important; }
+.xtermBgColor112 { background-color: #87d700; }
+.xtermColor113 { color: #87d75f !important; }
+.xtermBgColor113 { background-color: #87d75f; }
+.xtermColor114 { color: #87d787 !important; }
+.xtermBgColor114 { background-color: #87d787; }
+.xtermColor115 { color: #87d7af !important; }
+.xtermBgColor115 { background-color: #87d7af; }
+.xtermColor116 { color: #87d7d7 !important; }
+.xtermBgColor116 { background-color: #87d7d7; }
+.xtermColor117 { color: #87d7ff !important; }
+.xtermBgColor117 { background-color: #87d7ff; }
+.xtermColor118 { color: #87ff00 !important; }
+.xtermBgColor118 { background-color: #87ff00; }
+.xtermColor119 { color: #87ff5f !important; }
+.xtermBgColor119 { background-color: #87ff5f; }
+.xtermColor120 { color: #87ff87 !important; }
+.xtermBgColor120 { background-color: #87ff87; }
+.xtermColor121 { color: #87ffaf !important; }
+.xtermBgColor121 { background-color: #87ffaf; }
+.xtermColor122 { color: #87ffd7 !important; }
+.xtermBgColor122 { background-color: #87ffd7; }
+.xtermColor123 { color: #87ffff !important; }
+.xtermBgColor123 { background-color: #87ffff; }
+.xtermColor124 { color: #af0000 !important; }
+.xtermBgColor124 { background-color: #af0000; }
+.xtermColor125 { color: #af005f !important; }
+.xtermBgColor125 { background-color: #af005f; }
+.xtermColor126 { color: #af0087 !important; }
+.xtermBgColor126 { background-color: #af0087; }
+.xtermColor127 { color: #af00af !important; }
+.xtermBgColor127 { background-color: #af00af; }
+.xtermColor128 { color: #af00d7 !important; }
+.xtermBgColor128 { background-color: #af00d7; }
+.xtermColor129 { color: #af00ff !important; }
+.xtermBgColor129 { background-color: #af00ff; }
+.xtermColor130 { color: #af5f00 !important; }
+.xtermBgColor130 { background-color: #af5f00; }
+.xtermColor131 { color: #af5f5f !important; }
+.xtermBgColor131 { background-color: #af5f5f; }
+.xtermColor132 { color: #af5f87 !important; }
+.xtermBgColor132 { background-color: #af5f87; }
+.xtermColor133 { color: #af5faf !important; }
+.xtermBgColor133 { background-color: #af5faf; }
+.xtermColor134 { color: #af5fd7 !important; }
+.xtermBgColor134 { background-color: #af5fd7; }
+.xtermColor135 { color: #af5fff !important; }
+.xtermBgColor135 { background-color: #af5fff; }
+.xtermColor136 { color: #af8700 !important; }
+.xtermBgColor136 { background-color: #af8700; }
+.xtermColor137 { color: #af875f !important; }
+.xtermBgColor137 { background-color: #af875f; }
+.xtermColor138 { color: #af8787 !important; }
+.xtermBgColor138 { background-color: #af8787; }
+.xtermColor139 { color: #af87af !important; }
+.xtermBgColor139 { background-color: #af87af; }
+.xtermColor140 { color: #af87d7 !important; }
+.xtermBgColor140 { background-color: #af87d7; }
+.xtermColor141 { color: #af87ff !important; }
+.xtermBgColor141 { background-color: #af87ff; }
+.xtermColor142 { color: #afaf00 !important; }
+.xtermBgColor142 { background-color: #afaf00; }
+.xtermColor143 { color: #afaf5f !important; }
+.xtermBgColor143 { background-color: #afaf5f; }
+.xtermColor144 { color: #afaf87 !important; }
+.xtermBgColor144 { background-color: #afaf87; }
+.xtermColor145 { color: #afafaf !important; }
+.xtermBgColor145 { background-color: #afafaf; }
+.xtermColor146 { color: #afafd7 !important; }
+.xtermBgColor146 { background-color: #afafd7; }
+.xtermColor147 { color: #afafff !important; }
+.xtermBgColor147 { background-color: #afafff; }
+.xtermColor148 { color: #afd700 !important; }
+.xtermBgColor148 { background-color: #afd700; }
+.xtermColor149 { color: #afd75f !important; }
+.xtermBgColor149 { background-color: #afd75f; }
+.xtermColor150 { color: #afd787 !important; }
+.xtermBgColor150 { background-color: #afd787; }
+.xtermColor151 { color: #afd7af !important; }
+.xtermBgColor151 { background-color: #afd7af; }
+.xtermColor152 { color: #afd7d7 !important; }
+.xtermBgColor152 { background-color: #afd7d7; }
+.xtermColor153 { color: #afd7ff !important; }
+.xtermBgColor153 { background-color: #afd7ff; }
+.xtermColor154 { color: #afff00 !important; }
+.xtermBgColor154 { background-color: #afff00; }
+.xtermColor155 { color: #afff5f !important; }
+.xtermBgColor155 { background-color: #afff5f; }
+.xtermColor156 { color: #afff87 !important; }
+.xtermBgColor156 { background-color: #afff87; }
+.xtermColor157 { color: #afffaf !important; }
+.xtermBgColor157 { background-color: #afffaf; }
+.xtermColor158 { color: #afffd7 !important; }
+.xtermBgColor158 { background-color: #afffd7; }
+.xtermColor159 { color: #afffff !important; }
+.xtermBgColor159 { background-color: #afffff; }
+.xtermColor160 { color: #d70000 !important; }
+.xtermBgColor160 { background-color: #d70000; }
+.xtermColor161 { color: #d7005f !important; }
+.xtermBgColor161 { background-color: #d7005f; }
+.xtermColor162 { color: #d70087 !important; }
+.xtermBgColor162 { background-color: #d70087; }
+.xtermColor163 { color: #d700af !important; }
+.xtermBgColor163 { background-color: #d700af; }
+.xtermColor164 { color: #d700d7 !important; }
+.xtermBgColor164 { background-color: #d700d7; }
+.xtermColor165 { color: #d700ff !important; }
+.xtermBgColor165 { background-color: #d700ff; }
+.xtermColor166 { color: #d75f00 !important; }
+.xtermBgColor166 { background-color: #d75f00; }
+.xtermColor167 { color: #d75f5f !important; }
+.xtermBgColor167 { background-color: #d75f5f; }
+.xtermColor168 { color: #d75f87 !important; }
+.xtermBgColor168 { background-color: #d75f87; }
+.xtermColor169 { color: #d75faf !important; }
+.xtermBgColor169 { background-color: #d75faf; }
+.xtermColor170 { color: #d75fd7 !important; }
+.xtermBgColor170 { background-color: #d75fd7; }
+.xtermColor171 { color: #d75fff !important; }
+.xtermBgColor171 { background-color: #d75fff; }
+.xtermColor172 { color: #d78700 !important; }
+.xtermBgColor172 { background-color: #d78700; }
+.xtermColor173 { color: #d7875f !important; }
+.xtermBgColor173 { background-color: #d7875f; }
+.xtermColor174 { color: #d78787 !important; }
+.xtermBgColor174 { background-color: #d78787; }
+.xtermColor175 { color: #d787af !important; }
+.xtermBgColor175 { background-color: #d787af; }
+.xtermColor176 { color: #d787d7 !important; }
+.xtermBgColor176 { background-color: #d787d7; }
+.xtermColor177 { color: #d787ff !important; }
+.xtermBgColor177 { background-color: #d787ff; }
+.xtermColor178 { color: #d7af00 !important; }
+.xtermBgColor178 { background-color: #d7af00; }
+.xtermColor179 { color: #d7af5f !important; }
+.xtermBgColor179 { background-color: #d7af5f; }
+.xtermColor180 { color: #d7af87 !important; }
+.xtermBgColor180 { background-color: #d7af87; }
+.xtermColor181 { color: #d7afaf !important; }
+.xtermBgColor181 { background-color: #d7afaf; }
+.xtermColor182 { color: #d7afd7 !important; }
+.xtermBgColor182 { background-color: #d7afd7; }
+.xtermColor183 { color: #d7afff !important; }
+.xtermBgColor183 { background-color: #d7afff; }
+.xtermColor184 { color: #d7d700 !important; }
+.xtermBgColor184 { background-color: #d7d700; }
+.xtermColor185 { color: #d7d75f !important; }
+.xtermBgColor185 { background-color: #d7d75f; }
+.xtermColor186 { color: #d7d787 !important; }
+.xtermBgColor186 { background-color: #d7d787; }
+.xtermColor187 { color: #d7d7af !important; }
+.xtermBgColor187 { background-color: #d7d7af; }
+.xtermColor188 { color: #d7d7d7 !important; }
+.xtermBgColor188 { background-color: #d7d7d7; }
+.xtermColor189 { color: #d7d7ff !important; }
+.xtermBgColor189 { background-color: #d7d7ff; }
+.xtermColor190 { color: #d7ff00 !important; }
+.xtermBgColor190 { background-color: #d7ff00; }
+.xtermColor191 { color: #d7ff5f !important; }
+.xtermBgColor191 { background-color: #d7ff5f; }
+.xtermColor192 { color: #d7ff87 !important; }
+.xtermBgColor192 { background-color: #d7ff87; }
+.xtermColor193 { color: #d7ffaf !important; }
+.xtermBgColor193 { background-color: #d7ffaf; }
+.xtermColor194 { color: #d7ffd7 !important; }
+.xtermBgColor194 { background-color: #d7ffd7; }
+.xtermColor195 { color: #d7ffff !important; }
+.xtermBgColor195 { background-color: #d7ffff; }
+.xtermColor196 { color: #ff0000 !important; }
+.xtermBgColor196 { background-color: #ff0000; }
+.xtermColor197 { color: #ff005f !important; }
+.xtermBgColor197 { background-color: #ff005f; }
+.xtermColor198 { color: #ff0087 !important; }
+.xtermBgColor198 { background-color: #ff0087; }
+.xtermColor199 { color: #ff00af !important; }
+.xtermBgColor199 { background-color: #ff00af; }
+.xtermColor200 { color: #ff00d7 !important; }
+.xtermBgColor200 { background-color: #ff00d7; }
+.xtermColor201 { color: #ff00ff !important; }
+.xtermBgColor201 { background-color: #ff00ff; }
+.xtermColor202 { color: #ff5f00 !important; }
+.xtermBgColor202 { background-color: #ff5f00; }
+.xtermColor203 { color: #ff5f5f !important; }
+.xtermBgColor203 { background-color: #ff5f5f; }
+.xtermColor204 { color: #ff5f87 !important; }
+.xtermBgColor204 { background-color: #ff5f87; }
+.xtermColor205 { color: #ff5faf !important; }
+.xtermBgColor205 { background-color: #ff5faf; }
+.xtermColor206 { color: #ff5fd7 !important; }
+.xtermBgColor206 { background-color: #ff5fd7; }
+.xtermColor207 { color: #ff5fff !important; }
+.xtermBgColor207 { background-color: #ff5fff; }
+.xtermColor208 { color: #ff8700 !important; }
+.xtermBgColor208 { background-color: #ff8700; }
+.xtermColor209 { color: #ff875f !important; }
+.xtermBgColor209 { background-color: #ff875f; }
+.xtermColor210 { color: #ff8787 !important; }
+.xtermBgColor210 { background-color: #ff8787; }
+.xtermColor211 { color: #ff87af !important; }
+.xtermBgColor211 { background-color: #ff87af; }
+.xtermColor212 { color: #ff87d7 !important; }
+.xtermBgColor212 { background-color: #ff87d7; }
+.xtermColor213 { color: #ff87ff !important; }
+.xtermBgColor213 { background-color: #ff87ff; }
+.xtermColor214 { color: #ffaf00 !important; }
+.xtermBgColor214 { background-color: #ffaf00; }
+.xtermColor215 { color: #ffaf5f !important; }
+.xtermBgColor215 { background-color: #ffaf5f; }
+.xtermColor216 { color: #ffaf87 !important; }
+.xtermBgColor216 { background-color: #ffaf87; }
+.xtermColor217 { color: #ffafaf !important; }
+.xtermBgColor217 { background-color: #ffafaf; }
+.xtermColor218 { color: #ffafd7 !important; }
+.xtermBgColor218 { background-color: #ffafd7; }
+.xtermColor219 { color: #ffafff !important; }
+.xtermBgColor219 { background-color: #ffafff; }
+.xtermColor220 { color: #ffd700 !important; }
+.xtermBgColor220 { background-color: #ffd700; }
+.xtermColor221 { color: #ffd75f !important; }
+.xtermBgColor221 { background-color: #ffd75f; }
+.xtermColor222 { color: #ffd787 !important; }
+.xtermBgColor222 { background-color: #ffd787; }
+.xtermColor223 { color: #ffd7af !important; }
+.xtermBgColor223 { background-color: #ffd7af; }
+.xtermColor224 { color: #ffd7d7 !important; }
+.xtermBgColor224 { background-color: #ffd7d7; }
+.xtermColor225 { color: #ffd7ff !important; }
+.xtermBgColor225 { background-color: #ffd7ff; }
+.xtermColor226 { color: #ffff00 !important; }
+.xtermBgColor226 { background-color: #ffff00; }
+.xtermColor227 { color: #ffff5f !important; }
+.xtermBgColor227 { background-color: #ffff5f; }
+.xtermColor228 { color: #ffff87 !important; }
+.xtermBgColor228 { background-color: #ffff87; }
+.xtermColor229 { color: #ffffaf !important; }
+.xtermBgColor229 { background-color: #ffffaf; }
+.xtermColor230 { color: #ffffd7 !important; }
+.xtermBgColor230 { background-color: #ffffd7; }
+.xtermColor231 { color: #ffffff !important; }
+.xtermBgColor231 { background-color: #ffffff; }
+.xtermColor232 { color: #080808 !important; }
+.xtermBgColor232 { background-color: #080808; }
+.xtermColor233 { color: #121212 !important; }
+.xtermBgColor233 { background-color: #121212; }
+.xtermColor234 { color: #1c1c1c !important; }
+.xtermBgColor234 { background-color: #1c1c1c; }
+.xtermColor235 { color: #262626 !important; }
+.xtermBgColor235 { background-color: #262626; }
+.xtermColor236 { color: #303030 !important; }
+.xtermBgColor236 { background-color: #303030; }
+.xtermColor237 { color: #3a3a3a !important; }
+.xtermBgColor237 { background-color: #3a3a3a; }
+.xtermColor238 { color: #444444 !important; }
+.xtermBgColor238 { background-color: #444444; }
+.xtermColor239 { color: #4e4e4e !important; }
+.xtermBgColor239 { background-color: #4e4e4e; }
+.xtermColor240 { color: #585858 !important; }
+.xtermBgColor240 { background-color: #585858; }
+.xtermColor241 { color: #626262 !important; }
+.xtermBgColor241 { background-color: #626262; }
+.xtermColor242 { color: #6c6c6c !important; }
+.xtermBgColor242 { background-color: #6c6c6c; }
+.xtermColor243 { color: #767676 !important; }
+.xtermBgColor243 { background-color: #767676; }
+.xtermColor244 { color: #808080 !important; }
+.xtermBgColor244 { background-color: #808080; }
+.xtermColor245 { color: #8a8a8a !important; }
+.xtermBgColor245 { background-color: #8a8a8a; }
+.xtermColor246 { color: #949494 !important; }
+.xtermBgColor246 { background-color: #949494; }
+.xtermColor247 { color: #9e9e9e !important; }
+.xtermBgColor247 { background-color: #9e9e9e; }
+.xtermColor248 { color: #a8a8a8 !important; }
+.xtermBgColor248 { background-color: #a8a8a8; }
+.xtermColor249 { color: #b2b2b2 !important; }
+.xtermBgColor249 { background-color: #b2b2b2; }
+.xtermColor250 { color: #bcbcbc !important; }
+.xtermBgColor250 { background-color: #bcbcbc; }
+.xtermColor251 { color: #c6c6c6 !important; }
+.xtermBgColor251 { background-color: #c6c6c6; }
+.xtermColor252 { color: #d0d0d0 !important; }
+.xtermBgColor252 { background-color: #d0d0d0; }
+.xtermColor253 { color: #dadada !important; }
+.xtermBgColor253 { background-color: #dadada; }
+.xtermColor254 { color: #e4e4e4 !important; }
+.xtermBgColor254 { background-color: #e4e4e4; }
+.xtermColor255 { color: #eeeeee !important; }
+.xtermBgColor255 { background-color: #eeeeee; }
+.rstudio-themes-flat.editor_dark.ace_editor_theme a {
+   color: #FFF !important;
+}
+
+.ace_layer {
+   z-index: 3;
+}
+
+.ace_layer.ace_print-margin-layer {
+   z-index: 2;
+}
+
+.ace_layer.ace_marker-layer {
+   z-index: 1;
+}
+
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete {
+   background: #2f3941;
+   border: solid 1px #4e5c68 !important;
+   color: #f0f0f0;
+}
+
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line,
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_line-hover {
+   background: rgba(255, 255, 255, 0.15);
+   border: none
+}
+
+
+/* ---------------------------------------------
+// Some more One Dark UI (not-editor) theming
+// --------------------------------------------- */
+
+.ace_foreign_line.background_highlight {
+    background-color: #282C34 !important;
+}
+
+.ace_codebegin, .ace_codeend {
+    color: #5c6371 !important;
+}
+
+/* Borders */
+.rstudio-themes-flat .rstudio-themes-dark-grey .GFUP41PBEKD,
+.rstudio-themes-flat .rstudio-themes-dark-grey .rstudio-themes-border, 
+.rstudio-themes-flat .rstudio-themes-dark-grey table.GFUP41PBPQ>tbody>tr>td, 
+.rstudio-themes-flat .rstudio-themes-dark-grey .GFUP41PBOV>div:last-child, 
+.rstudio-themes-flat .rstudio-themes-dark-grey .rstheme_secondaryToolbar,
+.rstudio-themes-flat .rstudio-themes-dark-grey .GFUP41PBMCD .GFUP41PBCCD,
+.rstudio-themes-flat .rstudio-themes-dark-grey .GFUP41PBMMD .GFUP41PBCMD,
+.rstudio-themes-flat .rstudio-themes-dark-grey .GFUP41PBCLD .GFUP41PBIKD,
+.rstudio-themes-flat .rstudio-themes-dark-grey .GFUP41PBFMD .gwt-SplitLayoutPanel-VDragger,
+.rstudio-themes-flat .rstudio-themes-dark-grey .gwt-TabLayoutPanel > div > div.gwt-TabLayoutPanelTabs,
+.rstudio-themes-flat .rstudio-themes-dark-grey .gwt-TabLayoutPanelTabs table.rstheme_tabLayoutCenter,
+.rstudio-themes-flat .rstudio-themes-dark-grey .rstheme_minimizedWindowObject table.rstheme_tabLayoutCenter,
+.rstudio-themes-flat .rstudio-themes-dark-grey td.GFUP41PBI3B, .rstudio-themes-flat .rstudio-themes-dark-grey td.GFUP41PBG3B,
+.rstudio-themes-flat .rstudio-themes-dark-grey td.GFUP41PBN3B, .rstudio-themes-flat .rstudio-themes-dark-grey td.GFUP41PBK3B,
+.rstudio-themes-flat .rstudio-themes-dark-grey .GFUP41PBF3B,
+.rstudio-themes-flat .rstudio-themes-dark-grey .GFUP41PBA3B
+{
+  border-color: var(--border-color) !important;
+}
+
+.rstudio-themes-flat .rstudio-themes-dark-grey .GFUP41PBLAD {
+  border-bottom: 1px solid #3a3e44 !important;
+}
+
+/* Making various layout texts grey instead of white */
+.rstudio-themes-flat .rstudio-themes-dark .gwt-TabLayoutPanelTabs table.rstheme_tabLayoutCenter {
+  color: var(--text-color-deselected);
+}
+
+.rstudio-themes-flat .rstudio-themes-dark-grey .gwt-TabLayoutPanelTabs .gwt-TabLayoutPanelTab-selected table.rstheme_tabLayoutCenter,
+.rstudio-themes-flat .rstudio-themes-dark button,
+button.GFUP41PBNU.GFUP41PBOQ td div.GFUP41PBPU,
+.rstudio-themes-flat.rstudio-themes-dark.editor_dark.ace_editor_theme p code,
+.rstudio-themes-flat .rstudio-themes-dark td.GFUP41PBB3B.rstudio-themes-background,
+iframe.rstudio-HelpFrame.ace_editor_theme #rstudio_container table td {
+  color: var(--text-color-selected) !important;
+}
+
+.rstudio-themes-flat.editor_dark.ace_editor_theme p, .rstudio-themes-flat.editor_dark.ace_editor_theme a, .rstudio-themes-dark.editor_dark.ace_editor_theme div,
+.rstudio-themes-flat.editor_dark table[summary='R argblock'] code,
+.rstudio-themes-flat.editor_dark h1, .rstudio-themes-flat.editor_dark h2, .rstudio-themes-flat.editor_dark h3, .rstudio-themes-flat.editor_dark h4 {
+  color: var(--text-color) !important;
+}
+
+/* 'Play' dropdown buttons in Environment panel (top-right)  */
+td.GFUP41PBG3B.GFUP41PBOQ input[type='image'],
+td.GD15MCFCXB.GD15MCFCNQ input[type='image'] {
+  filter: grayscale();
+}
+
+body.macintosh.rstudio-themes-flat.rstudio-themes-dark-menus.editor_dark.avoid-move-cursor,  /* Tabs all over IDE */
+button div.GFUP41PBPU {  /* Buttons all over IDE */ 
+  font-family: "SF Pro Text", "Helvetica Neue", Helvetica, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif !important;
+}
+
+/* TODO: This is a band-aid fix. Look into it (various white texts around the UI) */
+.rstudio-themes-flat.editor_dark table {
+  color: unset !important;
+}
+
+/* For Windows 10 */
+.GD15MCFCAW, .GD15MCFCAW td, .GD15MCFCAW pre,
+.windows .GD15MCFCAW, .windows .GD15MCFCAW td, .windows .GD15MCFCAW pre {
+  line-height: 1.5 !important;
+}

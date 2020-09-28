@@ -1634,3 +1634,9 @@ button div.GFUP41PBPU {  /* Buttons all over IDE */
 .windows .GD15MCFCAW, .windows .GD15MCFCAW td, .windows .GD15MCFCAW pre {
   line-height: 1.5 !important;
 }
+
+/* Fixing 'invisible' indent guides */
+.ace_indent-guide {
+  border-right: 1px solid #495163;
+  /* box-shadow: 2px 0 0 -1px #495163;  Essentially the same, but has bigger gaps (vertically) */
+}

@@ -582,7 +582,7 @@ table.GD15MCFCI2.GD15MCFCF2, select.gwt-ListBox.GD15MCFCNCB, .gwt-TextBox, input
 }
 
 /*sidebar of options dialog*/
-.GFUP41PBHK, .GD15MCFCGK, .GD15MCFCI2  {
+.GFUP41PBHK, .GD15MCFCGK, .GD15MCFCI2, .GGBOEFPDFK {
 background: rgb(37,39,40) !important;
 border-color: rgb(92,93,94) !important;
 }
@@ -715,7 +715,8 @@ div .gwt-Label.GD15MCFCF3 {
   color: black;
 }
 
-.GFUP41PBHRB td.GFUP41PBHRB {
+/* Pane Layout tab backgrounds in Gloab Options */
+.GFUP41PBHRB td.GFUP41PBHRB, .GGBOEFPDNNB td.GGBOEFPDNNB {
   background-color: unset;
 }
 

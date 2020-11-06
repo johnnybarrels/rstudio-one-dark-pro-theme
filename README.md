@@ -17,6 +17,12 @@ rstudioapi::addTheme('https://raw.githubusercontent.com/johnnybarrels/rstudio-on
 
 Note that this will override any other theme named 'One Dark Pro' you may have (this can be controlled by removing the `force=True` argument).
 
+If you get the error:
+```rr
+Error in loadNamespace(name) : there is no package called 'rstudioapi'
+```
+run `install.packages('rstudioapi')` and try again.
+
 ### Manual
 
 - Download the `OneDarkPro.rstheme` file from this repository (or clone)

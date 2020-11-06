@@ -1,20 +1,30 @@
 /* rs-theme-name: One Dark Pro */
 /* rs-theme-is-dark: TRUE */
-/* THIS THEME WAS APADTED FROM https://github.com/patrickshox/Mojave-Dark-RStudio-Theme */
+/* This theme is hosted at this repository: https://github.com/johnnybarrels/rstudio-one-dark-pro-theme */
+/* and was originally adapted from https://github.com/patrickshox/Mojave-Dark-RStudio-Theme */
 
 :root {
   --border-color: #282c34;
   --background-color: #21252b;
+  --one-dark-grey-mid: #23272e;
   --text-color: #abb2c0;
   --text-color-selected: #dcdcdc;
   --text-color-deselected: #7e8083;
-  --comment-style: italic;   /* change to 'normal' (without quotes) if don't want italic comments */
+  --code-font: 'JetBrains Mono'; /* This is for elements outside the main editor, set the main editor font in Global Settings > Appearance */
+  --ui-font: 'Lucida Grande';  /* RStudio default is Lucida Grande */
+  --vis-md-editor-font: 'Roboto';  /* Rendered markdown font in Visual Markdown Editor */
+  --comment-style: italic;   /* change to 'normal' if don't want italic comments */
 }
 
+/* Note: all user-defined fonts above have sensible fallbacks */
 
 /* ------------------------------------
       UI STUFF (Outside editor)
  ------------------------------------ */
+
+body {
+  font-family: var(--ui-font), 'Lucida Grande', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 .ace_snippet-marker {
     background: rgb(21,126,251);
@@ -131,13 +141,15 @@ div.ace_editor_theme:hover iframe#rstudio_plot_image_frame {
   border-right: 1px solid #555555;
 }
 
-/* gwt-TabLayoutPanelTab GFUP41PBH */
+/* Global Options tab buttons */
 
-.GFUP41PBH.gwt-TabLayoutPanelTab[aria-selected='false']{
+.GFUP41PBH.gwt-TabLayoutPanelTab[aria-selected='false'],
+.GGBOEFPDH.gwt-TabLayoutPanelTab[aria-selected='false'] {
   background: #656565;
 }
 
-.GFUP41PBH.gwt-TabLayoutPanelTab[aria-selected='true']{
+.GFUP41PBH.gwt-TabLayoutPanelTab[aria-selected='true'],
+.GGBOEFPDH.gwt-TabLayoutPanelTab[aria-selected='true'] {
   color: #262626;
 }
 
@@ -359,16 +371,16 @@ img[src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAAAW
 
 /* The theme selector demo code font (usually Monaco) */
 div#editor.GFUP41PBGW.ace_editor.ace_hidpi {
-  font-family: "Fira Code Retina", "Fira Code", "Ubuntu Mono", "Fira Mono", "Menlo", "Meslo", "Lucida Console", "Monaco", monospace !important;
+  font-family: var(--code-font), "Menlo", "Meslo", "Lucida Console", "Monaco", monospace !important;
 }
 
-/* Changes the font of markdown text in visual mardown editor */
+/* Changes the font of markdown text in visual markdown editor */
 .pm-proportional-font {
-  /* font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !important; */
+  font-family: var(--vis-md-editor-font), 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !important;
 }
 
 body pre, body code {
-  font-family: "Fira Code", "Menlo", "Ubuntu Mono", "Fira Mono", "Meslo", "Lucida Console", "Monaco", monospace !important;
+  font-family: var(--code-font), "Menlo", "Meslo", "Lucida Console", "Monaco", monospace !important;
   color: var(--text-color) !important;
 }
 
@@ -1620,9 +1632,9 @@ td.GD15MCFCXB.GD15MCFCNQ input[type='image'] {
   filter: grayscale();
 }
 
-body.macintosh.rstudio-themes-flat.rstudio-themes-dark-menus.editor_dark.avoid-move-cursor,  /* Tabs all over IDE */
+/* body.macintosh.rstudio-themes-flat.rstudio-themes-dark-menus.editor_dark.avoid-move-cursor, */ /* Tabs all over IDE */
 button div.GFUP41PBPU {  /* Buttons all over IDE */ 
-  font-family: "SF Pro Text", "Helvetica Neue", Helvetica, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif !important;
+  font-family: var(--ui-font), "Helvetica Neue", Helvetica, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif !important;
 }
 
 /* TODO: This is a band-aid fix. Look into it (various white texts around the UI) */
@@ -1641,3 +1653,36 @@ button div.GFUP41PBPU {  /* Buttons all over IDE */
   border-right: 1px solid #495163;
   /* box-shadow: 2px 0 0 -1px #495163;  Essentially the same, but has bigger gaps (vertically) */
 }
+
+/* Modify keyboard shortcuts menu */
+body > div.gwt-DialogBox.gwt-DialogBox-ModalDialog.GFUP41PBKX > div > table > tbody > tr.dialogMiddle > td.dialogMiddleCenter > div > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > div {
+  color: var(--text-color-selected);
+}
+body > div.gwt-DialogBox.gwt-DialogBox-ModalDialog.GFUP41PBKX > div > table > tbody > tr.dialogMiddle > td.dialogMiddleCenter > div > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > div > div:nth-child(3) > div {
+  border-color: var(--border-color) !important;
+}
+div.gwt-DialogBox.gwt-DialogBox-ModalDialog.GFUP41PBKX table > tbody > tr > td {
+  border-top: var(--border-color);
+  border-bottom: var(--border-color);
+  /* color: var(--text-color-selected); */
+}
+th.dataGridHeader.GFUP41PBB- {
+  background-color: var(--background-color);
+  color: var(--text-color-selected);
+}
+.GFUP41PBNX {
+  border-color: var(--border-color) !important;
+}
+.rstudio-themes-flat .GFUP41PBE- {
+  border-color: var(--border-color) !important;
+}
+.dataGridHeader {
+  border-color: var(--border-color) !important;
+}
+.GFUP41PBNY {
+  background-color: var(--one-dark-grey-mid) !important;
+}
+.GFUP41PBOX {
+  background-color: var(--background-color) !important
+}
+/* End modify keyboard shortcuts menu */

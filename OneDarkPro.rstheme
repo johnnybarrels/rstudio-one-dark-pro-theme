@@ -14,7 +14,6 @@
   --code-font: 'JetBrains Mono'; /* This is for elements outside the main editor, set the main editor font in Global Settings > Appearance */
   --ui-font: 'Lucida Grande';  /* RStudio default is Lucida Grande */
   --vis-md-editor-font: 'Roboto';  /* Rendered markdown font in Visual Markdown Editor */
-  --vis-md-editor-max-width: 950px;  /* Max width of Visual Markdown editor (defaults to 700px) */
   --plot-md-viewer: invert(0%);  /* change to invert(100%) to make Plot and Markdown viewer black */
 }
 
@@ -1704,11 +1703,6 @@ th.dataGridHeader {
 
 
 /* Visual Markdown Editor */
-
-.pm-editing-root-node {
-  padding-left: calc((100% - var(--vis-md-editor-max-width))/2) !important;
-  padding-right: calc((100% - var(--vis-md-editor-max-width))/2) !important;
-}
 
 .pm-code-editor {
   border-radius: 3px;

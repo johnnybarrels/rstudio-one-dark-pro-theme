@@ -38,6 +38,7 @@ This theme was adapted from [this theme](https://github.com/patrickshox/Mojave-D
 This theme has been tested and is fully functional on:
 ```
 macOS Catalina 10.15.6, RStudio 1.4.750
+macOS Catalina 10.15.6, RStudio 1.4.1010
 ```
 and
 ```

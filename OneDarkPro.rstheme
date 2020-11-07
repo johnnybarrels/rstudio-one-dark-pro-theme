@@ -10,17 +10,19 @@
   --text-color: #abb2c0;
   --text-color-selected: #dcdcdc;
   --text-color-deselected: #7e8083;
+  --comment-style: italic;   /* change to 'normal' if don't want italic comments */
   --code-font: 'JetBrains Mono'; /* This is for elements outside the main editor, set the main editor font in Global Settings > Appearance */
   --ui-font: 'Lucida Grande';  /* RStudio default is Lucida Grande */
   --vis-md-editor-font: 'Roboto';  /* Rendered markdown font in Visual Markdown Editor */
-  --comment-style: italic;   /* change to 'normal' if don't want italic comments */
+  --vis-md-editor-max-width: 950px;  /* Max width of Visual Markdown editor (defaults to 700px) */
+  --plot-md-viewer: invert(0%);  /* change to invert(100%) to make Plot and Markdown viewer black */
 }
 
 /* Note: all user-defined fonts above have sensible fallbacks */
 
 /* ------------------------------------
       UI STUFF (Outside editor)
- ------------------------------------ */
+------------------------------------ */
 
 body {
   font-family: var(--ui-font), 'Lucida Grande', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -52,7 +54,7 @@ body {
 
 /* Markup viewer */
 iframe.gwt-Frame.ace_editor_theme:not([src="about:blank"]) {
-  filter: invert(100%)
+  filter: var(--plot-md-viewer)
 }
 
 /* Markup viewer on hover */
@@ -134,25 +136,26 @@ div.ace_editor_theme:hover iframe#rstudio_plot_image_frame {
   background-color: #37393a;
 }
 
-/* Option menu tab buttons */
-.GFUP41PBH.gwt-TabLayoutPanelTab {
-  border-top: none;
-  border-bottom: none;
-  border-right: 1px solid #555555;
+/* Global Options menu tab buttons */
+
+[id^="rstudio_label_"][id$="_options_panel"] > tbody > tr > td > div .gwt-TabLayoutPanelTab:first-child {
+  border-left: none !important;
 }
 
-/* Global Options tab buttons */
+div[id^="rstudio_"][id$="_prefs_tab"] {
+  border-top: none !important;
+  border-bottom: none !important;
+  border-right: unset !important;
+  border-left: 1px solid #555555;
+}
 
-.GFUP41PBH.gwt-TabLayoutPanelTab[aria-selected='false'],
-.GGBOEFPDH.gwt-TabLayoutPanelTab[aria-selected='false'] {
+div[id^="rstudio_"][id$="_prefs_tab"][aria-selected="false"] {
   background: #656565;
 }
 
-.GFUP41PBH.gwt-TabLayoutPanelTab[aria-selected='true'],
-.GGBOEFPDH.gwt-TabLayoutPanelTab[aria-selected='true'] {
+div[id^="rstudio_"][id$="_prefs_tab"][aria-selected="true"] {
   color: #262626;
 }
-
 
 /*Update Packages Table column names:*/
 th.GD15MCFCK4B {
@@ -215,9 +218,9 @@ div#rstudio_container, .gwt-SplitLayoutPanel-HDragger, .gwt-SplitLayoutPanel-VDr
 }
 
 /* data viewer table borders */
- .rstudio-themes-flat.rstudio-themes-dark-grey table.dataTable tbody td, .rstudio-themes-flat.rstudio-themes-dark-grey table.dataTable thead th {
-   border-color: rgb(38,39,39)
- }
+.rstudio-themes-flat.rstudio-themes-dark-grey table.dataTable tbody td, .rstudio-themes-flat.rstudio-themes-dark-grey table.dataTable thead th {
+  border-color: rgb(38,39,39)
+}
 
 /*button labels in Git commit page*/
 .GD15MCFCMU {
@@ -370,11 +373,11 @@ img[src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAAAW
 }
 
 /* The theme selector demo code font (usually Monaco) */
-div#editor.GFUP41PBGW.ace_editor.ace_hidpi {
+iframe[title="Editor Theme Preview"] div#editor.ace_editor.ace_hidpi {
   font-family: var(--code-font), "Menlo", "Meslo", "Lucida Console", "Monaco", monospace !important;
 }
 
-/* Changes the font of markdown text in visual markdown editor */
+/* Changes the font of markdown text in visual mardown editor */
 .pm-proportional-font {
   font-family: var(--vis-md-editor-font), 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !important;
 }
@@ -594,14 +597,18 @@ table.GD15MCFCI2.GD15MCFCF2, select.gwt-ListBox.GD15MCFCNCB, .gwt-TextBox, input
 }
 
 /*sidebar of options dialog*/
-.GFUP41PBHK, .GD15MCFCGK, .GD15MCFCI2, .GGBOEFPDFK {
+.GFUP41PBHK, .GD15MCFCGK, .GD15MCFCI2, .GGBOEFPDFK, .GCHYANPCHK {
 background: rgb(37,39,40) !important;
 border-color: rgb(92,93,94) !important;
 }
 
 /*selected sidebar*/
 table.GD15MCFCFK.GD15MCFCLJ, .GD15MCFCJ2.GD15MCFCNQ.GD15MCFCE2 {
-  background: rgb(14,92,205) !important;
+  background: #23b0e3 !important;
+}
+
+[id^='rstudio_label'][aria-selected='true'] {
+  background: #23b0e3 !important;
 }
 
 /*markdown creation pane info caption*/
@@ -699,11 +706,6 @@ button.GFUP41PBNU.GFUP41PBOQ td div.GFUP41PBPU {
   color: white;
 }
 
-.GFUP41PBLJ.__rstudio_modal_first_focus {
-  color: #262626;
-  background: #5daef2;
-}
-
 .gwt-DialogBox.gwt-DialogBox-ModalDialog {
   color: #262626;
 }
@@ -728,7 +730,9 @@ div .gwt-Label.GD15MCFCF3 {
 }
 
 /* Pane Layout tab backgrounds in Gloab Options */
-.GFUP41PBHRB td.GFUP41PBHRB, .GGBOEFPDNNB td.GGBOEFPDNNB {
+.GFUP41PBHRB td.GFUP41PBHRB,
+.GGBOEFPDNNB td.GGBOEFPDNNB,
+.GCHYANPCKRB td.GCHYANPCKRB {
   background-color: unset;
 }
 
@@ -759,15 +763,15 @@ span .GFUP41PBN-B.ace_constant.ace_language {
 
 
 .rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete {
-   background: #2f3941;
-   border: solid 1px rgb(71,71,71) !important;
-   color: #f0f0f0;
+  background: #2f3941;
+  border: solid 1px rgb(71,71,71) !important;
+  color: #f0f0f0;
 }
 
 .rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line,
 .rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_line-hover {
-   background: rgba(255, 255, 255, 0.15);
-   border: none
+  background: rgba(255, 255, 255, 0.15);
+  border: none
 }
 
 .ace_active-line {
@@ -877,15 +881,15 @@ span .GFUP41PBN-B.ace_constant.ace_language {
 }
 
 .ace_layer {
-   z-index: 3;
+  z-index: 3;
 }
 
 .ace_layer.ace_print-margin-layer {
-   z-index: 2;
+  z-index: 2;
 }
 
 .ace_layer.ace_marker-layer {
-   z-index: 1;
+  z-index: 1;
 }
 
 .ace_constant.ace_character.ace_escape {
@@ -1013,8 +1017,8 @@ span .GFUP41PBN-B.ace_constant.ace_language {
   outline-offset: -1px;
 }
 .terminal .xterm-selection div {
-   position: absolute;
-   background-color: #CCC;
+  position: absolute;
+  background-color: #CCC;
 }
 .terminal .xterm-viewport {
   background-color: var(--background-color);
@@ -1541,31 +1545,31 @@ span .GFUP41PBN-B.ace_constant.ace_language {
 .xtermColor255 { color: #eeeeee !important; }
 .xtermBgColor255 { background-color: #eeeeee; }
 .rstudio-themes-flat.editor_dark.ace_editor_theme a {
-   color: #FFF !important;
+  color: #FFF !important;
 }
 
 .ace_layer {
-   z-index: 3;
+  z-index: 3;
 }
 
 .ace_layer.ace_print-margin-layer {
-   z-index: 2;
+  z-index: 2;
 }
 
 .ace_layer.ace_marker-layer {
-   z-index: 1;
+  z-index: 1;
 }
 
 .rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete {
-   background: #2f3941;
-   border: solid 1px #4e5c68 !important;
-   color: #f0f0f0;
+  background: #2f3941;
+  border: solid 1px #4e5c68 !important;
+  color: #f0f0f0;
 }
 
 .rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line,
 .rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_line-hover {
-   background: rgba(255, 255, 255, 0.15);
-   border: none
+  background: rgba(255, 255, 255, 0.15);
+  border: none
 }
 
 
@@ -1655,20 +1659,33 @@ button div.GFUP41PBPU {  /* Buttons all over IDE */
 }
 
 /* Modify keyboard shortcuts menu */
-body > div.gwt-DialogBox.gwt-DialogBox-ModalDialog.GFUP41PBKX > div > table > tbody > tr.dialogMiddle > td.dialogMiddleCenter > div > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > div {
+body > div.gwt-DialogBox.gwt-DialogBox-ModalDialog > div > table > tbody > tr.dialogMiddle > td.dialogMiddleCenter > div > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > div {
   color: var(--text-color-selected);
+  background-color: var(--background-color);
+  border-color: #0b1f31 !important;
 }
-body > div.gwt-DialogBox.gwt-DialogBox-ModalDialog.GFUP41PBKX > div > table > tbody > tr.dialogMiddle > td.dialogMiddleCenter > div > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > div > div:nth-child(3) > div {
+
+body > div.gwt-DialogBox.gwt-DialogBox-ModalDialog > div > table > tbody > tr.dialogMiddle > td.dialogMiddleCenter > div > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > div > div:nth-child(3) > div {
   border-color: var(--border-color) !important;
 }
-div.gwt-DialogBox.gwt-DialogBox-ModalDialog.GFUP41PBKX table > tbody > tr > td {
+div.gwt-DialogBox.gwt-DialogBox-ModalDialog table > tbody > tr > td {
   border-top: var(--border-color);
   border-bottom: var(--border-color);
   /* color: var(--text-color-selected); */
 }
-th.dataGridHeader.GFUP41PBB- {
+
+body > div.gwt-DialogBox.gwt-DialogBox-ModalDialog.GCHYANPCMX > div > table > tbody > tr.dialogMiddle > td.dialogMiddleCenter > div > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td > div > div:nth-child(3) > div > div:nth-child(2) > div > div > table > tbody > tr > td {
+  border: none;
+}
+
+.GCHYANPCPX {
+  border: none !important;
+}
+
+th.dataGridHeader {
   background-color: var(--background-color);
   color: var(--text-color-selected);
+  border-color: var(--border-color) !important;
 }
 .GFUP41PBNX {
   border-color: var(--border-color) !important;
@@ -1676,13 +1693,24 @@ th.dataGridHeader.GFUP41PBB- {
 .rstudio-themes-flat .GFUP41PBE- {
   border-color: var(--border-color) !important;
 }
-.dataGridHeader {
-  border-color: var(--border-color) !important;
-}
-.GFUP41PBNY {
+
+.GFUP41PBNY, .GCHYANPCAY {
   background-color: var(--one-dark-grey-mid) !important;
 }
-.GFUP41PBOX {
+.GFUP41PBOX, .GCHYANPCPY {
   background-color: var(--background-color) !important
 }
 /* End modify keyboard shortcuts menu */
+
+
+/* Visual Markdown Editor */
+
+.pm-editing-root-node {
+  padding-left: calc((100% - var(--vis-md-editor-max-width))/2) !important;
+  padding-right: calc((100% - var(--vis-md-editor-max-width))/2) !important;
+}
+
+.pm-code-editor {
+  border-radius: 3px;
+  padding: 5px;
+}

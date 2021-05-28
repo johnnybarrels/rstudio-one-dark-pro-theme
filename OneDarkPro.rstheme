@@ -854,10 +854,6 @@ span .GFUP41PBN-B.ace_constant.ace_language {
     color: #51b6c3;
 }
 
-.ace_paren {
-  color: #abb2bf !important;
-}
-
 .ace_keyword.ace_other.ace_unit {
   color: #d19a66;
 }

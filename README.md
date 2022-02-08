@@ -3,10 +3,16 @@
 
 A 'Total IDE' build of the One Dark Pro theme for RStudio!
 
-This is a fork of [github.com/johnnybarrels/rstudio-one-dark-pro-theme](https://github.com/johnnybarrels/rstudio-one-dark-pro-theme).
+### This fork
+
+This is repo is a fork of [github.com/johnnybarrels/rstudio-one-dark-pro-theme](https://github.com/johnnybarrels/rstudio-one-dark-pro-theme).
 The reason why I created this fork is mostly aesthetics: some menus had ugly (i.e. white) backgrounds that stuck out in this otherwise dark theme, and sometimes even made text unreadable.
 I upvoted this issue and created a PR to fix it, but the repo appears unmaintained.
 Therefore, I took it into my own hands to implement and maintain these fixes.
+
+Additionally, I did not like having the plots in the plot viewer darkened to fit the theme. I prefer the plots being shown exactly in the colors that they will be exported.
+
+![](img/rstudio-onedark-menu.png)
 
 ## Installation
 

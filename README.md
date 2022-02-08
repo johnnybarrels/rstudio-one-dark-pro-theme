@@ -3,6 +3,11 @@
 
 A 'Total IDE' build of the One Dark Pro theme for RStudio!
 
+This is a fork of [github.com/johnnybarrels/rstudio-one-dark-pro-theme](https://github.com/johnnybarrels/rstudio-one-dark-pro-theme).
+The reason why I created this fork is mostly aesthetics: some menus had ugly (i.e. white) backgrounds that stuck out in this otherwise dark theme, and sometimes even made text unreadable.
+I upvoted this issue and created a PR to fix it, but the repo appears unmaintained.
+Therefore, I took it into my own hands to implement and maintain these fixes.
+
 ## Installation
 
 **FIRST**: In RStudio, go to Global Options -> Appearance and ensure either `Modern` or `Sky` are selected as the `RStudio Theme` at the top
@@ -12,7 +17,7 @@ A 'Total IDE' build of the One Dark Pro theme for RStudio!
 Run the following snippet in the RStudio Console:
 
 ```r
-rstudioapi::addTheme('https://raw.githubusercontent.com/johnnybarrels/rstudio-one-dark-pro-theme/master/OneDarkPro.rstheme', apply=TRUE, force=TRUE)
+rstudioapi::addTheme('https://raw.githubusercontent.com/acarril/rstudio-one-dark-pro-theme/master/OneDarkPro.rstheme', apply=TRUE, force=TRUE)
 ```
 
 Note that this will override any other theme named 'One Dark Pro' you may have (this can be controlled by removing the `force=True` argument).
@@ -37,8 +42,7 @@ This theme was adapted from [this theme](https://github.com/patrickshox/Mojave-D
 
 This theme has been tested and is fully functional on:
 ```
-macOS Catalina 10.15.6, RStudio 1.4.750
-macOS Catalina 10.15.6, RStudio 1.4.1010
+macOS Catalina 10.1576, RStudio 2021.09.2+382 "Ghost Orchid" Release (fc9e217980ee9320126e33cdf334d4f4e105dc4f, 2022-01-04)
 ```
 and
 ```
@@ -47,4 +51,4 @@ Windows 10, RStudio 1.2.5033
 
 The editor font I use is [Fira Code](https://github.com/tonsky/FiraCode), and the majority of the UI font is [Open Sans](https://fonts.google.com/specimen/Open+Sans). It is not necessary to install these.
 
-If you have any suggested improvements, let me know [here](https://github.com/johnnybarrels/rstudio-one-dark-pro-theme/issues)!
+If you have any suggested improvements, let me know [here](https://github.com/acarril/rstudio-one-dark-pro-theme/issues)!

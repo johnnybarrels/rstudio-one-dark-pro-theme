@@ -161,7 +161,7 @@ div[id^="rstudio_"][id$="_prefs_tab"][aria-selected="true"] {
 }
 
 /*Update Packages Table column names:*/
-th.GD15MCFCK4B, .GONVA-ECMGC, .GONVA-ECKGC, .GONVA-ECNGC {
+th.GD15MCFCK4B, .GONVA-ECMGC, .GONVA-ECKGC, .GONVA-ECNGC, .GONVA-ECBV {
     background: rgb(49,49,51);
     border-color: rgb(75,75,75);
     color: white;

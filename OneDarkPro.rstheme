@@ -73,7 +73,7 @@ iframe.gwt-Frame.ace_editor_theme:hover {
 
 /*Plots viewer*/
 iframe#rstudio_plot_image_frame {
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
 }
 /* Plots viewer on hover*/
 div.ace_editor_theme:hover iframe#rstudio_plot_image_frame {

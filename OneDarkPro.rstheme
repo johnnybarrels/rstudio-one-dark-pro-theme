@@ -73,7 +73,7 @@ iframe.gwt-Frame.ace_editor_theme:hover {
 
 /*Plots viewer*/
 iframe#rstudio_plot_image_frame {
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
 }
 /* Plots viewer on hover*/
 div.ace_editor_theme:hover iframe#rstudio_plot_image_frame {
@@ -161,7 +161,7 @@ div[id^="rstudio_"][id$="_prefs_tab"][aria-selected="true"] {
 }
 
 /*Update Packages Table column names:*/
-th.GD15MCFCK4B {
+th.GD15MCFCK4B, .GONVA-ECMGC, .GONVA-ECKGC, .GONVA-ECNGC, .GONVA-ECBV {
     background: rgb(49,49,51);
     border-color: rgb(75,75,75);
     color: white;
@@ -600,7 +600,7 @@ table.GD15MCFCI2.GD15MCFCF2, select.gwt-ListBox.GD15MCFCNCB, .gwt-TextBox, input
 }
 
 /*sidebar of options dialog*/
-.GFUP41PBHK, .GD15MCFCGK, .GD15MCFCI2, .GGBOEFPDFK, .GCHYANPCHK {
+.GFUP41PBHK, .GD15MCFCGK, .GD15MCFCI2, .GGBOEFPDFK, .GCHYANPCHK, .GONVA-ECHK {
 background: rgb(37,39,40) !important;
 border-color: rgb(92,93,94) !important;
 }
@@ -735,8 +735,9 @@ div .gwt-Label.GD15MCFCF3 {
 /* Pane Layout tab backgrounds in Gloab Options */
 .GFUP41PBHRB td.GFUP41PBHRB,
 .GGBOEFPDNNB td.GGBOEFPDNNB,
-.GCHYANPCKRB td.GCHYANPCKRB {
-  background-color: unset;
+.GCHYANPCKRB td.GCHYANPCKRB,
+.GONVA-ECHSB td.GONVA-ECHSB {
+  background-color: rgb(37,39,40) !important; 
 }
 
 
